@@ -5,7 +5,12 @@ const PORT = process.env.PORT || 3000;
 
 //Middleweare
 app.use(express.json());
-
+app.use(function (req, res, next) {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "*");
+  res.setHeader("Access-Control-Allow-Headers", "*");
+  next();
+});
 //Conect to the dtabase
 
 //Routes HTTP-Rest
