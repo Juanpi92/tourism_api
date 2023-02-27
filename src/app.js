@@ -1,5 +1,5 @@
 import express from "express";
-import { selectAllProduct } from "./controller/product.js";
+import { selectAllProduct, selectOneProduct } from "./controller/product.js";
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -11,9 +11,10 @@ app.use(function (req, res, next) {
   res.setHeader("Access-Control-Allow-Headers", "*");
   next();
 });
-//Conect to the dtabase
 
 //Routes HTTP-Rest
+
+//Get All Product
 app.get("/products", async (req, res) => {
   let products = await selectAllProduct();
   products = products.map((product) => {
@@ -27,8 +28,22 @@ app.get("/products", async (req, res) => {
   res.status(200).send(products);
 });
 
-app.get("/teste", async (req, res) => {
-  res.json({ msg: "Working" });
+//Get One Product
+app.get("/products/:id", async (req, res) => {
+  const { id } = req.params;
+  let product = await selectOneProduct(id);
+  product = {
+    ...product,
+    imagens: product.imagens.split(","),
+    included: product.included.split(","),
+  };
+  res.status(200).send(product);
+});
+
+//Del One product
+app.delete("/products/:id", async (req, res) => {
+  const { id } = req.params;
+  res.status(200).send(product);
 });
 
 //Escutar desde o server

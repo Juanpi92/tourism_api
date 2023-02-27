@@ -5,3 +5,8 @@ export async function selectAllProduct() {
     return db.all("SELECT * FROM products");
   });
 }
+export async function selectOneProduct(id) {
+  return openDb().then((db) => {
+    return db.get(`SELECT * FROM products WHERE id=${id}`);
+  });
+}
