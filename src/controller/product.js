@@ -16,9 +16,24 @@ export async function deleteOneProduct(id) {
     db.run(`DELETE FROM products WHERE id=${id}`);
   });
 }
-export async function updateOneProduct(id) {
+export async function updateOneProduct(id, product) {
   openDb().then((db) => {
-    db.run(`DELETE FROM products WHERE id=${id}`);
+    db.run(
+      `UPDATE products SET name=?,price=?,description=?,located=?,cordinates=?,included=?,capacity=?,sold=?,imagens=?,region=? WHERE id=?`,
+      [
+        product.name,
+        product.price,
+        product.description,
+        product.located,
+        product.cordinates,
+        product.included,
+        product.capacity,
+        product.sold,
+        product.imagens,
+        product.region,
+        id,
+      ]
+    );
   });
 }
 

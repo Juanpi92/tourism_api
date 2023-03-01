@@ -68,7 +68,7 @@ app.delete("/products/:id", async (req, res) => {
 //Update One product
 app.put("/products/:id", async (req, res) => {
   const { id } = req.params;
-  await updateOneProduct(id);
+  await updateOneProduct(id, req.body);
   res.status(200).send({ update: true });
 });
 
