@@ -5,7 +5,7 @@ import {
   selectAllProduct,
   selectOneProduct,
   updateOneProduct,
-} from "./controller/product.js";
+} from "./controller/products/product.js";
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -19,6 +19,10 @@ app.use(function (req, res, next) {
 });
 
 //Routes HTTP-Rest
+
+app.get("/", async (req, res) => {
+  res.send("<h1>API documentation</h1>");
+});
 
 //Get All Product
 app.get("/products", async (req, res) => {
@@ -67,9 +71,13 @@ app.delete("/products/:id", async (req, res) => {
 
 //Update One product
 app.put("/products/:id", async (req, res) => {
-  const { id } = req.params;
-  await updateOneProduct(id, req.body);
-  res.status(200).send({ update: true });
+  try {
+    const { id } = req.params;
+    await updateOneProduct(id, req.body);
+    res.status(200).send({ update: true });
+  } catch (error) {
+    res.status(400).send({ update: false });
+  }
 });
 
 //Escutar desde o server
