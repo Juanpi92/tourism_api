@@ -11,10 +11,21 @@ export async function selectOneProduct(id) {
   });
 }
 
+export async function deleteOneProduct(id) {
+  openDb().then((db) => {
+    db.run(`DELETE FROM products WHERE id=${id}`);
+  });
+}
+export async function updateOneProduct(id) {
+  openDb().then((db) => {
+    db.run(`DELETE FROM products WHERE id=${id}`);
+  });
+}
+
 export async function insertProduct(product) {
   openDb().then((db) => {
     db.run(
-      "INSERT INTO products(name,price,description,located,cordinates,included,capacity,sold,imagens)VALUES(?,?,?,?,?,?,?,?,?)",
+      "INSERT INTO products(name,price,description,located,cordinates,included,capacity,sold,imagens,region)VALUES(?,?,?,?,?,?,?,?,?,?)",
       [
         product.name,
         product.price,
@@ -25,6 +36,7 @@ export async function insertProduct(product) {
         product.capacity,
         product.sold,
         product.imagens,
+        product.region,
       ]
     );
   });
