@@ -1,5 +1,9 @@
 import express from "express";
-import { selectAllProduct, selectOneProduct } from "./controller/product.js";
+import {
+  insertProduct,
+  selectAllProduct,
+  selectOneProduct,
+} from "./controller/product.js";
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -40,12 +44,23 @@ app.get("/products/:id", async (req, res) => {
   res.status(200).send(product);
 });
 
+//Insert Product
+app.post("/product", async (req, res) => {
+  let product = req.body;
+  product = {
+    ...product,
+    imagens: product.imagens.join(","),
+    included: product.included.join(","),
+  };
+  await insertProduct(product);
+  res.status(200).send({ insert: true });
+});
+
 //Del One product
 app.delete("/products/:id", async (req, res) => {
   const { id } = req.params;
   res.status(200).send(product);
 });
-
 //Escutar desde o server
 app.listen(PORT, () => {
   console.log("API ready to use");
