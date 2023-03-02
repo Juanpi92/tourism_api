@@ -6,7 +6,7 @@ import {
   selectAllProduct,
   selectOneProduct,
   updateOneProduct,
-} from "./controller/products/product.js";
+} from "./controller/product.js";
 const app = express();
 const PORT = process.env.PORT || 3000;
 
