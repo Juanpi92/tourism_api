@@ -6,7 +6,7 @@ import {
   selectAllProduct,
   selectOneProduct,
   updateOneProduct,
-} from "./controller/products/product.js";
+} from "./controller/product.js";
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -22,8 +22,12 @@ app.use(function (req, res, next) {
 
 //Routes HTTP-Rest
 //app.use(express.static("src/documentation"));
+//routes for the documentation
 app.get("/", async (req, res) => {
   res.sendFile(path.join(path.resolve(), "src/documentation/index.html"));
+});
+app.get("/css", async (req, res) => {
+  res.sendFile(path.join(path.resolve(), "src/documentation/index.css"));
 });
 
 //Get All Product
@@ -73,13 +77,10 @@ app.delete("/products/:id", async (req, res) => {
 
 //Update One product
 app.put("/products/:id", async (req, res) => {
-  try {
-    const { id } = req.params;
-    await updateOneProduct(id, req.body);
-    res.status(200).send({ update: true });
-  } catch (error) {
-    res.status(400).send({ update: false });
-  }
+  const { id } = req.params;
+  let product = req.body;
+  await updateOneProduct(id, product);
+  res.status(200).send({ update: true });
 });
 
 //Escutar desde o server

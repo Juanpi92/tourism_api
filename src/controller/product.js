@@ -1,4 +1,4 @@
-import { openDb } from "../../infra/configDB.js";
+import { openDb } from "../infra/configDB.js";
 
 export async function selectAllProduct() {
   return openDb().then((db) => {
