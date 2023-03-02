@@ -2,7 +2,7 @@ import { openDb } from "../../infra/configDB.js";
 
 export async function selectAllProduct() {
   return openDb().then((db) => {
-    return db.all("SELECT * FROM products");
+    return db.all("SELECT * FROM products ORDER BY rating DESC");
   });
 }
 export async function selectOneProduct(id) {
