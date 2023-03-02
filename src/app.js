@@ -1,4 +1,5 @@
 import express from "express";
+import path from "path";
 import {
   deleteOneProduct,
   insertProduct,
@@ -11,6 +12,7 @@ const PORT = process.env.PORT || 3000;
 
 //Middleweare
 app.use(express.json());
+
 app.use(function (req, res, next) {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "*");
@@ -19,9 +21,9 @@ app.use(function (req, res, next) {
 });
 
 //Routes HTTP-Rest
-
+//app.use(express.static("src/documentation"));
 app.get("/", async (req, res) => {
-  res.send("<h1>API documentation</h1>");
+  res.sendFile(path.join(path.resolve(), "src/documentation/index.html"));
 });
 
 //Get All Product
