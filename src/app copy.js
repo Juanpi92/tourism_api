@@ -31,9 +31,6 @@ app.get("/", async (req, res) => {
 app.get("/css", async (req, res) => {
   res.sendFile(path.join(path.resolve(), "src/documentation/index.css"));
 });
-app.get("/js", async (req, res) => {
-  res.sendFile(path.join(path.resolve(), "src/documentation/index.js"));
-});
 
 //Get All Product
 app.get("/products", async (req, res) => {
