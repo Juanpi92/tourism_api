@@ -1,13 +1,7 @@
 import express from "express";
-import path from "path";
-import {
-  deleteOneProduct,
-  insertProduct,
-  selectAllProduct,
-  selectOneProduct,
-  updateOneProduct,
-} from "./controller/product.js";
-import { selectAllRegion } from "./controller/region.js";
+import { documentationRoutes } from "./routes/documentation_routes.js";
+import { productRoutes } from "./routes/product_routes.js";
+import { regionRoutes } from "./routes/region_routes.js";
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -22,78 +16,15 @@ app.use(function (req, res, next) {
 });
 
 //Routes HTTP-Rest
-//app.use(express.static("src/documentation"));
+
+//Product Routes
+productRoutes(app);
 
 //routes for the documentation
-app.get("/", async (req, res) => {
-  res.sendFile(path.join(path.resolve(), "src/documentation/index.html"));
-});
-app.get("/css", async (req, res) => {
-  res.sendFile(path.join(path.resolve(), "src/documentation/index.css"));
-});
-app.get("/js", async (req, res) => {
-  res.sendFile(path.join(path.resolve(), "src/documentation/index.js"));
-});
+documentationRoutes(app);
 
-//Get All Product
-app.get("/products", async (req, res) => {
-  let products = await selectAllProduct();
-  products = products.map((product) => {
-    return {
-      ...product,
-      imagens: product.imagens.split(","),
-      included: product.included.split(","),
-    };
-  });
-
-  res.status(200).send(products);
-});
-
-//Get One Product
-app.get("/products/:id", async (req, res) => {
-  const { id } = req.params;
-  let product = await selectOneProduct(id);
-  product = {
-    ...product,
-    imagens: product.imagens.split(","),
-    included: product.included.split(","),
-  };
-  res.status(200).send(product);
-});
-
-//Insert Product
-app.post("/products", async (req, res) => {
-  let product = req.body;
-  product = {
-    ...product,
-    imagens: product.imagens.join(","),
-    included: product.included.join(","),
-  };
-  await insertProduct(product);
-  res.status(200).send({ insert: true });
-});
-
-//Del One product
-app.delete("/products/:id", async (req, res) => {
-  const { id } = req.params;
-  await deleteOneProduct(id);
-  res.status(200).send({ delete: true });
-});
-
-//Update One product
-app.put("/products/:id", async (req, res) => {
-  const { id } = req.params;
-  let product = req.body;
-  await updateOneProduct(id, product);
-  res.status(200).send({ update: true });
-});
-
-//Select Regions
-app.get("/region", async (req, res) => {
-  let myregion = await selectAllRegion();
-  let region = myregion.map((region) => region.region);
-  res.status(200).send(region);
-});
+//routes for region
+regionRoutes(app);
 
 //listen from the server
 app.listen(PORT, () => {
