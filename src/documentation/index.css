@@ -28,9 +28,8 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 90px; 
-
-
+  height: 90px;
+  font-size: 17px;
 }
 
 /* NAVBAR */
@@ -74,6 +73,13 @@ li {
 a {
   color: #fff;
   text-decoration: none;
+}
+
+nav ul li a:hover {
+  background-color: #554e4e;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 19px;
 }
 
 .align-right a:hover {
