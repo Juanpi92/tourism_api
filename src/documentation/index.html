@@ -220,9 +220,9 @@
         </table>
         
       <div class="btnContainer">
-        <button class="btnShowExemple">Show GET Exemple</button>
+        <button class="btnShowExemple2">Show GET Exemple</button>
       </div>
-      <div class="exemploJson">
+      <div class="exemploJson2">
         <table id="allGet">
           <thead>
             <th>Type</th>
@@ -315,7 +315,10 @@
             </tr>
           </tbody>
         </table>
-        <div class="exemploJson">
+        <div class="btnContainer">
+          <button class="btnShowExemple3">Show POST Exemple</button>
+        </div>
+        <div class="exemploJsonPost">
           <table id="allGet">
             <thead>
               <th>Type</th>
@@ -361,11 +364,10 @@
               </code>
               </td>
             </tbody>
+            
           </table>  
-        <div class="btnContainer">
-          <button class="btnShowExemple">Show POST Exemple</button>
-        </div>
       </div>
+      
     </section>
 
     <!-- DELETAR UM PRODUTO -->
@@ -391,7 +393,10 @@
             </tr>database.
           </tbody>
         </table>
-        <div class="exemploJson">
+        <div class="btnContainer">
+          <button class="btnShowExemple4">Show DELETE Exemple</button>
+        </div>
+        <div class="exemploJsonDelete">
           <table id="allGet">
             <thead>
               <th>Type</th>
@@ -439,9 +444,7 @@
             </tbody>
           </table>  
       </div>
-      <div class="btnContainer">
-        <button class="btnShowExemple">Show DELETE Exemple</button>
-      </div>
+    
     </section>
 
 
@@ -507,9 +510,9 @@
         <h3>Response</h3>
 
         <div class="btnContainer">
-          <button class="btnShowExemple">Show PUT Exemple</button>
+          <button class="btnShowExemple5">Show PUT Exemple</button>
         </div>
-        <div class="exemploJson">
+        <div class="exemploJsonPut">
           <table id="allGet">
             <thead>
               <th>Type</th>
@@ -610,11 +613,35 @@
       });
 
       const showBtn = document.querySelector('.btnShowExemple')
+      const showBtn2 = document.querySelector('.btnShowExemple2')
+      const showBtn3 = document.querySelector('.btnShowExemple3')
+      const showBtn4 = document.querySelector('.btnShowExemple4')
+      const showBtn5 = document.querySelector('.btnShowExemple5')
       const jsonCode = document.querySelector('.exemploJson')
-
+      const jsonCode2 = document.querySelector('.exemploJson2')
+      const jsonCodePost = document.querySelector('.exemploJsonPost')
+      const jsonCodeDelete = document.querySelector('.exemploJsonDelete')
+      const jsonCodePut = document.querySelector('.exemploJsonPut')
 
       showBtn.addEventListener('click', ()=>{
         jsonCode.classList.toggle('showJson')
+    
+      })
+      showBtn2.addEventListener('click', ()=>{
+        jsonCode2.classList.toggle('showJson')
+    
+      })
+      showBtn3.addEventListener('click', ()=>{
+        jsonCodePost.classList.toggle('showJson')
+    
+      })
+      showBtn4.addEventListener('click', ()=>{
+        jsonCodeDelete.classList.toggle('showJson')
+    
+      })
+      showBtn5.addEventListener('click', ()=>{
+        jsonCodePut.classList.toggle('showJson')
+    
       })
     </script>
 

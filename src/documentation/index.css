@@ -194,7 +194,7 @@ main {
 .btnContainer button{
   font-size: 20px;
   padding: 10px 20px;
-  background-color: #333333;
+  background-color: #555;
   color: #FFFFFF;
   border: none;
   border-radius: 5px;
@@ -252,16 +252,41 @@ th {
   font-size: 14px;
 }
 
-.allGet{
-  display: none;
-  overflow: auto;
-  max-height: 5rem;
+
+
+.exemploJson2{
+ display: none;
+ transition: all 2s ease;
+ overflow: auto;
+ max-height: 20rem;
+}
+
+.exemploJsonPost{
+ display: none;
+ transition: all 2s ease;
+ overflow: auto;
+ max-height: 20rem;
+}
+
+.exemploJsonDelete{
+ display: none;
+ transition: all 2s ease;
+ overflow: auto;
+ max-height: 20rem;
+}
+
+.exemploJsonPut{
+ display: none;
+ transition: all 2s ease;
+ overflow: auto;
+ max-height: 20rem;
 }
 
 .showJson {
   display: block;
   transition: all 2s ease;
 }
+
 
 .jsonTitle {
   font-weight: bold;
