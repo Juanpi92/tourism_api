@@ -85,7 +85,7 @@
             <tr>
               <td>Price</td>
               <td>number</td>
-              <td>price of the product</td>
+              <td>Price of the product</td>
             </tr>
             <tr>
               <td>Images</td>
@@ -159,7 +159,7 @@
       <div class="endpoint">
         <h2>GET /products/:id</h2>
         <p>Returns the details of a specific product, identified by the parameter <code>id</code>.</p>
-        <h3>Parâmetros</h3>
+        <h3>Parameters</h3>
         <table class='table'>
           <thead>
             <tr>
@@ -172,7 +172,7 @@
             <tr>
               <td>id</td>
               <td>integer</td>
-              <td>Product ID a ser recuperado</td>
+              <td>Product ID to retrieve</td>
             </tr>
           </tbody>
         </table>
@@ -204,7 +204,7 @@
             <tr>
               <td>Price</td>
               <td>number</td>
-              <td>price of the product</td>
+              <td>Price of the product</td>
             </tr>
             <tr>
               <td>Images</td>
@@ -218,7 +218,58 @@
             </tr>
           </tbody>
         </table>
+        
+      <div class="btnContainer">
+        <button class="btnShowExemple">Show GET Exemple</button>
       </div>
+      <div class="exemploJson">
+        <table id="allGet">
+          <thead>
+            <th>Type</th>
+            <th>Response</th>
+          </thead>
+          <tbody>
+            <td class="jsonTitle">Json</td>
+            <td class="json">
+              <code class="jsonCode">
+                {
+                  "id":1,
+                  "Name":"Angra dos Reis",
+                  "price":120,
+                  "Description":"Conheça o paraíso brasileiro de Angra dos Reis e desfrute de praias paradisíacas.
+                   Você dará um passeio de escuna pelas ilhas da baía e degustará a gastronomia local. 
+                   O passeio inclui café da manhã no ponto de encontro enviado pelo guia, pausa para almoço, e uma pequena trilha pela região.
+                    Angra dos Reis é um município brasileiro no estado de Rio de Janeiro, a sudoeste. 
+                    É composto por 365 ilhas e um pequeno porto rodeado por uma linha costeira íngreme e arborizada. 
+                    A região é conhecida pelas suas inúmeras praias e pela biodiversidade da Ilha Grande, a maior ilha. 
+                    Vila do Abraão é a principal vila da ilha e conta com restaurantes, bares e a Igreja de São Sebastião, no centro de Ilha Grande.",
+                  "located":"Angra dos Reis, Rio de Janeiro",
+                  "Included":[
+                     "café da manhã",
+                     "almoço",
+                     "guia",
+                     "acessibilidade",
+                     "trilha"
+                  ],
+                  "capacity":20,
+                  "sold":5,
+                  "Images":[
+                     "https://i.imgur.com/d6xEd2J.jpeg",
+                     "https://i.imgur.com/YQ7JwAF.jpg",
+                     "https://i.imgur.com/n27mTkB.jpg",
+                     "https://i.imgur.com/UVfWHmg.jpg"
+                  ],
+                  "region":"Costa Verde",
+                  "latitude":"-23.00679139156804",
+                  "longitude":"-44.31874801861794",
+                  "rating":4.9,
+                  "date":"21-03-2023"
+               }
+            </code>
+            </td>
+          </tbody>
+        </table>  
+    </div>
     </section>
 
     <!-- INSERIR PRODUTO -->
@@ -250,7 +301,7 @@
             <tr>
               <td>Price</td>
               <td>number</td>
-              <td>price of the product</td>
+              <td>Price of the product</td>
             </tr>
             <tr>
               <td>Images</td>
@@ -264,7 +315,56 @@
             </tr>
           </tbody>
         </table>
-
+        <div class="exemploJson">
+          <table id="allGet">
+            <thead>
+              <th>Type</th>
+              <th>Response</th>
+            </thead>
+            <tbody>
+              <td class="jsonTitle">Json</td>
+              <td class="json">
+                <code class="jsonCode">
+                  {
+                    "id":1,
+                    "Name":"Angra dos Reis",
+                    "price":120,
+                    "Description":"Conheça o paraíso brasileiro de Angra dos Reis e desfrute de praias paradisíacas.
+                     Você dará um passeio de escuna pelas ilhas da baía e degustará a gastronomia local. 
+                     O passeio inclui café da manhã no ponto de encontro enviado pelo guia, pausa para almoço, e uma pequena trilha pela região.
+                      Angra dos Reis é um município brasileiro no estado de Rio de Janeiro, a sudoeste. 
+                      É composto por 365 ilhas e um pequeno porto rodeado por uma linha costeira íngreme e arborizada. 
+                      A região é conhecida pelas suas inúmeras praias e pela biodiversidade da Ilha Grande, a maior ilha. 
+                      Vila do Abraão é a principal vila da ilha e conta com restaurantes, bares e a Igreja de São Sebastião, no centro de Ilha Grande.",
+                    "located":"Angra dos Reis, Rio de Janeiro",
+                    "Included":[
+                       "café da manhã",
+                       "almoço",
+                       "guia",
+                       "acessibilidade",
+                       "trilha"
+                    ],
+                    "capacity":20,
+                    "sold":5,
+                    "Images":[
+                       "https://i.imgur.com/d6xEd2J.jpeg",
+                       "https://i.imgur.com/YQ7JwAF.jpg",
+                       "https://i.imgur.com/n27mTkB.jpg",
+                       "https://i.imgur.com/UVfWHmg.jpg"
+                    ],
+                    "region":"Costa Verde",
+                    "latitude":"-23.00679139156804",
+                    "longitude":"-44.31874801861794",
+                    "rating":4.9,
+                    "date":"21-03-2023"
+                 }
+              </code>
+              </td>
+            </tbody>
+          </table>  
+        <div class="btnContainer">
+          <button class="btnShowExemple">Show POST Exemple</button>
+        </div>
       </div>
     </section>
 
@@ -287,10 +387,60 @@
             <tr>
               <td>id</td>
               <td>integer</td>
-              <td>Product ID a ser removido</td>
+              <td>Product ID to be removed</td>
             </tr>database.
           </tbody>
         </table>
+        <div class="exemploJson">
+          <table id="allGet">
+            <thead>
+              <th>Type</th>
+              <th>Response</th>
+            </thead>
+            <tbody>
+              <td class="jsonTitle">Json</td>
+              <td class="json">
+                <code class="jsonCode">
+                  {
+                    "id":1,
+                    "Name":"Angra dos Reis",
+                    "price":120,
+                    "Description":"Conheça o paraíso brasileiro de Angra dos Reis e desfrute de praias paradisíacas.
+                     Você dará um passeio de escuna pelas ilhas da baía e degustará a gastronomia local. 
+                     O passeio inclui café da manhã no ponto de encontro enviado pelo guia, pausa para almoço, e uma pequena trilha pela região.
+                      Angra dos Reis é um município brasileiro no estado de Rio de Janeiro, a sudoeste. 
+                      É composto por 365 ilhas e um pequeno porto rodeado por uma linha costeira íngreme e arborizada. 
+                      A região é conhecida pelas suas inúmeras praias e pela biodiversidade da Ilha Grande, a maior ilha. 
+                      Vila do Abraão é a principal vila da ilha e conta com restaurantes, bares e a Igreja de São Sebastião, no centro de Ilha Grande.",
+                    "located":"Angra dos Reis, Rio de Janeiro",
+                    "Included":[
+                       "café da manhã",
+                       "almoço",
+                       "guia",
+                       "acessibilidade",
+                       "trilha"
+                    ],
+                    "capacity":20,
+                    "sold":5,
+                    "Images":[
+                       "https://i.imgur.com/d6xEd2J.jpeg",
+                       "https://i.imgur.com/YQ7JwAF.jpg",
+                       "https://i.imgur.com/n27mTkB.jpg",
+                       "https://i.imgur.com/UVfWHmg.jpg"
+                    ],
+                    "region":"Costa Verde",
+                    "latitude":"-23.00679139156804",
+                    "longitude":"-44.31874801861794",
+                    "rating":4.9,
+                    "date":"21-03-2023"
+                 }
+              </code>
+              </td>
+            </tbody>
+          </table>  
+      </div>
+      <div class="btnContainer">
+        <button class="btnShowExemple">Show DELETE Exemple</button>
       </div>
     </section>
 
@@ -300,7 +450,7 @@
       <div class="endpoint" id="endpointFinal">
         <h2>PUT /products/:id</h2>
         <p>Updates a specific product, identified by the parameter <code>id</code>, in the database.</p>
-        <h3>Parâmetros</h3>
+        <h3>Parameters</h3>
         <table class='table'>
           <thead>
             <tr>
@@ -355,6 +505,57 @@
           </tbody>
         </table>
         <h3>Response</h3>
+
+        <div class="btnContainer">
+          <button class="btnShowExemple">Show PUT Exemple</button>
+        </div>
+        <div class="exemploJson">
+          <table id="allGet">
+            <thead>
+              <th>Type</th>
+              <th>Response</th>
+            </thead>
+            <tbody>
+              <td class="jsonTitle">Json</td>
+              <td class="json">
+                <code class="jsonCode">
+                  {
+                    "id":1,
+                    "Name":"Angra dos Reis",
+                    "price":120,
+                    "Description":"Conheça o paraíso brasileiro de Angra dos Reis e desfrute de praias paradisíacas.
+                     Você dará um passeio de escuna pelas ilhas da baía e degustará a gastronomia local. 
+                     O passeio inclui café da manhã no ponto de encontro enviado pelo guia, pausa para almoço, e uma pequena trilha pela região.
+                      Angra dos Reis é um município brasileiro no estado de Rio de Janeiro, a sudoeste. 
+                      É composto por 365 ilhas e um pequeno porto rodeado por uma linha costeira íngreme e arborizada. 
+                      A região é conhecida pelas suas inúmeras praias e pela biodiversidade da Ilha Grande, a maior ilha. 
+                      Vila do Abraão é a principal vila da ilha e conta com restaurantes, bares e a Igreja de São Sebastião, no centro de Ilha Grande.",
+                    "located":"Angra dos Reis, Rio de Janeiro",
+                    "Included":[
+                       "café da manhã",
+                       "almoço",
+                       "guia",
+                       "acessibilidade",
+                       "trilha"
+                    ],
+                    "capacity":20,
+                    "sold":5,
+                    "Images":[
+                       "https://i.imgur.com/d6xEd2J.jpeg",
+                       "https://i.imgur.com/YQ7JwAF.jpg",
+                       "https://i.imgur.com/n27mTkB.jpg",
+                       "https://i.imgur.com/UVfWHmg.jpg"
+                    ],
+                    "region":"Costa Verde",
+                    "latitude":"-23.00679139156804",
+                    "longitude":"-44.31874801861794",
+                    "rating":4.9,
+                    "date":"21-03-2023"
+                 }
+              </code>
+              </td>
+            </tbody>
+          </table>  
         <p>Returns a JSON object with the property <code>update</code> defined as <code>true</code>.</p>
       </div>
       </div>

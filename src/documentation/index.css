@@ -191,6 +191,21 @@ main {
   background-color: #0f4d95;
 }
 
+.btnContainer button{
+  font-size: 20px;
+  padding: 10px 20px;
+  background-color: #333333;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btnContainer button:hover{
+  background-color: #222222;
+}
+
 /* TABLES DA API */
 
 .table {
