@@ -5,9 +5,10 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/plfmoura/SquadProject-AzulTurismo/master/public/azul.png">
+  <meta Name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="/css" />
-  <title>Document</title>
+  <title>Azul Tour API</title>
 
 </head>
 
@@ -15,20 +16,16 @@
 
   <!-- NAVBAR -->
   <header class="header-nav">
-    <h1 class="left"><a href="#">Documentação da API de Gerenciamento de Produtos</a></h1>
-    <nav class="right">
-      <ul>
-        <li><a href="#get-all-products">Pegar todos os produtos</a></li>
-        <li><a href="#get-one-product">Pegar um produto</a></li>
-        <li><a href="#insert-product">Inserir Produto</a></li>
-        <li><a href="#delete-one-product">Deletar um produto</a></li>
-        <li><a href="#update-one-product">Atualizar um produto</a></li>
-      </ul>
-    </nav>
+    <div class="logo">
+      <img id="logoAnimada" src="https://raw.githubusercontent.com/plfmoura/SquadProject-AzulTurismo/master/public/azul.png" width="60px"
+        height="60px">
+        <span>Azul Tour</span>
+    </div>
+    <h1 class="left"><a href="#">API Documentation</a></h1>
   </header>
 
   <main>
-<br>
+    <br>
     <!-- URL DA API -->
     <table class="api-table">
       <thead>
@@ -40,15 +37,15 @@
         <tr>
           <td>
             <div class="caixinha">
-              <p class="urlApi">Segue o padrão da URL da API de consulta para buscar o endereço, cidade e estado através
-                do CEP.</p>
+              <p class="urlApi">Follows the API URL pattern of Azul Tour</p>
               <ul class="list">
-                <li>Padrão da URL: https://tourismapi.herokuapp.com/products/[id]</li>
-                <li>Exemplo: https://tourismapi.herokuapp.com/products/5</li>
+                <li>URL pattern: https://tourismapi.herokuapp.com/products/[id]</li>
+                <li>Exemple: https://tourismapi.herokuapp.com/products/5</li>
               </ul>
             </div>
             <div class="button-container">
-              <button id="copyBtn" class="copy-button" data-clipboard-text="tourismapi.herokuapp.com/">Copiar URL</button>
+              <button id="copyBtn" class="copy-button" data-clipboard-text="tourismapi.herokuapp.com/">Copiar
+                URL</button>
             </div>
           </td>
         </tr>
@@ -59,47 +56,98 @@
     <section id="get-all-products">
       <div class="endpoint">
         <h2>GET /products</h2>
-        <p>Retorna uma lista de todos os produtos cadastrados na base de dados.</p>
-        <h3>Resposta</h3>
-        <table>
+        <p>Returns a list of all products registered in the database.</p>
+        <h3>Response</h3>
+        <table class='table'>
           <thead>
             <tr>
-              <th>Propriedade</th>
-              <th>Tipo</th>
-              <th>Descrição</th>
+              <th>Property</th>
+              <th>Type</th>
+              <th>Description </th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>id</td>
-              <td>inteiro</td>
-              <td>ID do produto</td>
+              <td>integer</td>
+              <td>Product ID</td>
             </tr>
             <tr>
-              <td>nome</td>
+              <td>Name</td>
               <td>string</td>
-              <td>Nome do produto</td>
+              <td>Product's Name</td>
             </tr>
             <tr>
-              <td>descricao</td>
+              <td>Description </td>
               <td>string</td>
-              <td>Descrição do produto</td>
+              <td>Description  do produto</td>
             </tr>
             <tr>
-              <td>preco</td>
-              <td>número</td>
-              <td>Preço do produto</td>
+              <td>Price</td>
+              <td>number</td>
+              <td>price of the product</td>
             </tr>
             <tr>
-              <td>imagens</td>
-              <td>array de strings</td>
-              <td>Lista de imagens do produto</td>
+              <td>Images</td>
+              <td>Array of strings</td>
+              <td>Product photo list</td>
             </tr>
             <tr>
-              <td>included</td>
-              <td>array de strings</td>
-              <td>Lista de itens inclusos com o produto</td>
+              <td>Included</td>
+              <td>Array of strings</td>
+              <td>List of items Included in the product</td>
             </tr>
+          </tbody>
+        </table>
+        <div class="btnContainer">
+          <button class="btnShowExemple">Show Exemple</button>
+        </div>
+      </div>
+      <div class="exemploJson">
+        <table id="allGet">
+          <thead>
+            <th>Type</th>
+            <th>Response</th>
+          </thead>
+          <tbody>
+            <td class="jsonTitle">Json</td>
+            <td class="json">
+              <code class="jsonCode">
+                {
+                  "id":1,
+                  "Name":"Angra dos Reis",
+                  "price":120,
+                  "Description":"Conheça o paraíso brasileiro de Angra dos Reis e desfrute de praias paradisíacas.
+                   Você dará um passeio de escuna pelas ilhas da baía e degustará a gastronomia local. 
+                   O passeio inclui café da manhã no ponto de encontro enviado pelo guia, pausa para almoço, e uma pequena trilha pela região.
+                    Angra dos Reis é um município brasileiro no estado de Rio de Janeiro, a sudoeste. 
+                    É composto por 365 ilhas e um pequeno porto rodeado por uma linha costeira íngreme e arborizada. 
+                    A região é conhecida pelas suas inúmeras praias e pela biodiversidade da Ilha Grande, a maior ilha. 
+                    Vila do Abraão é a principal vila da ilha e conta com restaurantes, bares e a Igreja de São Sebastião, no centro de Ilha Grande.",
+                  "located":"Angra dos Reis, Rio de Janeiro",
+                  "Included":[
+                     "café da manhã",
+                     "almoço",
+                     "guia",
+                     "acessibilidade",
+                     "trilha"
+                  ],
+                  "capacity":20,
+                  "sold":5,
+                  "Images":[
+                     "https://i.imgur.com/d6xEd2J.jpeg",
+                     "https://i.imgur.com/YQ7JwAF.jpg",
+                     "https://i.imgur.com/n27mTkB.jpg",
+                     "https://i.imgur.com/UVfWHmg.jpg"
+                  ],
+                  "region":"Costa Verde",
+                  "latitude":"-23.00679139156804",
+                  "longitude":"-44.31874801861794",
+                  "rating":4.9,
+                  "date":"21-03-2023"
+               }
+            </code>
+            </td>
           </tbody>
         </table>
       </div>
@@ -110,63 +158,63 @@
     <section id="get-one-product">
       <div class="endpoint">
         <h2>GET /products/:id</h2>
-        <p>Retorna os detalhes de um produto específico, identificado pelo parâmetro <code>id</code>.</p>
+        <p>Returns the details of a specific product, identified by the parameter <code>id</code>.</p>
         <h3>Parâmetros</h3>
-        <table>
+        <table class='table'>
           <thead>
             <tr>
-              <th>Nome</th>
-              <th>Tipo</th>
-              <th>Descrição</th>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Description </th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>id</td>
-              <td>inteiro</td>
-              <td>ID do produto a ser recuperado</td>
+              <td>integer</td>
+              <td>Product ID a ser recuperado</td>
             </tr>
           </tbody>
         </table>
-        <h3>Resposta</h3>
-        <table>
+        <h3>Response</h3>
+        <table class='table'>
           <thead>
             <tr>
-              <th>Propriedade</th>
-              <th>Tipo</th>
-              <th>Descrição</th>
+              <th>Property</th>
+              <th>Type</th>
+              <th>Description </th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>id</td>
-              <td>inteiro</td>
-              <td>ID do produto</td>
+              <td>integer</td>
+              <td>Product ID</td>
             </tr>
             <tr>
-              <td>nome</td>
+              <td>Name</td>
               <td>string</td>
-              <td>Nome do produto</td>
+              <td>Product's Name</td>
             </tr>
             <tr>
-              <td>descricao</td>
+              <td>Description </td>
               <td>string</td>
-              <td>Descrição do produto</td>
+              <td>Product Description</td>
             </tr>
             <tr>
-              <td>preco</td>
-              <td>número</td>
-              <td>Preço do produto</td>
+              <td>Price</td>
+              <td>number</td>
+              <td>price of the product</td>
             </tr>
             <tr>
-              <td>imagens</td>
-              <td>array de strings</td>
-              <td>Lista de imagens do produto</td>
+              <td>Images</td>
+              <td>Array of strings</td>
+              <td>Product photo list</td>
             </tr>
             <tr>
-              <td>included</td>
-              <td>array de strings</td>
-              <td>Lista de itens inclusos com o produto</td>
+              <td>Included</td>
+              <td>Array of strings</td>
+              <td>List of items Included in the product</td>
             </tr>
           </tbody>
         </table>
@@ -177,42 +225,42 @@
     <section id="insert-product">
       <div class="endpoint">
         <h2>POST /products</h2>
-        <p>Insere um novo produto na base de dados.</p>
-        <p>Retorna um objeto JSON com a propriedade <code>insert</code> definida como <code>true</code>.</p>
-        <h3>Resposta</h3>
-        <table>
+        <p>Inserts a new product in the database.</p>
+        <p>Returns a JSON object with the property <code>insert</code> defined as <code>true</code>.</p>
+        <h3>Response</h3>
+        <table class='table'>
           <thead>
             <tr>
-              <th>Propriedade</th>
-              <th>Tipo</th>
-              <th>Descrição</th>
+              <th>Property</th>
+              <th>Type</th>
+              <th>Description </th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>nome</td>
+              <td>Name</td>
               <td>string</td>
-              <td>Nome do produto</td>
+              <td>Product's Name</td>
             </tr>
             <tr>
-              <td>descricao</td>
+              <td>Description </td>
               <td>string</td>
-              <td>Descrição do produto</td>
+              <td>Description  do produto</td>
             </tr>
             <tr>
-              <td>preco</td>
-              <td>número</td>
-              <td>Preço do produto</td>
+              <td>Price</td>
+              <td>number</td>
+              <td>price of the product</td>
             </tr>
             <tr>
-              <td>imagens</td>
-              <td>array de strings</td>
-              <td>Lista de imagens do produto</td>
+              <td>Images</td>
+              <td>Array of strings</td>
+              <td>Product photo list</td>
             </tr>
             <tr>
-              <td>included</td>
-              <td>array de strings</td>
-              <td>Lista de itens inclusos com o produto</td>
+              <td>Included</td>
+              <td>Array of strings</td>
+              <td>List of items Included in the product</td>
             </tr>
           </tbody>
         </table>
@@ -224,23 +272,23 @@
     <section id="delete-one-product">
       <div class="endpoint">
         <h2>DELETE /products/:id</h2>
-        <p>Remove um produto específico, identificado pelo parâmetro <code>id</code>, da base de dados.</p>
-        <p>Retorna um objeto JSON com a propriedade <code>delete</code> definida como <code>true</code>.</p>
-        <h3>Resposta</h3>
-        <table>
+        <p>Removes a specific product, identified by the parameter<code>id</code>, from the database.</p>
+        <p>Returns a JSON object with the property <code>delete</code> defined as <code>true</code>.</p>
+        <h3>Response</h3>
+        <table class='table'>
           <thead>
             <tr>
-              <th>Nome</th>
-              <th>Tipo</th>
-              <th>Descrição</th>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Description </th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>id</td>
-              <td>inteiro</td>
-              <td>ID do produto a ser removido</td>
-            </tr>
+              <td>integer</td>
+              <td>Product ID a ser removido</td>
+            </tr>database.
           </tbody>
         </table>
       </div>
@@ -249,65 +297,65 @@
 
     <!-- ATUALIZAR UM PRODUTO -->
     <section id="update-one-product">
-      <div class="endpoint">
+      <div class="endpoint" id="endpointFinal">
         <h2>PUT /products/:id</h2>
-        <p>Atualiza um produto específico, identificado pelo parâmetro <code>id</code>, na base de dados.</p>
+        <p>Updates a specific product, identified by the parameter <code>id</code>, in the database.</p>
         <h3>Parâmetros</h3>
-        <table>
+        <table class='table'>
           <thead>
             <tr>
-              <th>Nome</th>
-              <th>Tipo</th>
-              <th>Descrição</th>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Description </th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>id</td>
-              <td>inteiro</td>
-              <td>ID do produto a ser atualizado</td>
+              <td>integer</td>
+              <td>Product ID a ser atualizado</td>
             </tr>
           </tbody>
         </table>
-        <h3>Corpo da Requisição</h3>
-        <table>
+        <h3>Requisition Body</h3>
+        <table class='table'>
           <thead>
             <tr>
-              <th>Propriedade</th>
-              <th>Tipo</th>
-              <th>Descrição</th>
+              <th>Property</th>
+              <th>Type</th>
+              <th>Description </th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>nome</td>
+              <td>Name</td>
               <td>string</td>
-              <td>Nome atualizado do produto</td>
+              <td>Name atualizado do produto</td>
             </tr>
             <tr>
-              <td>descricao</td>
+              <td>Description </td>
               <td>string</td>
-              <td>Descrição atualizada do produto</td>
+              <td>Description  atualizada do produto</td>
             </tr>
             <tr>
-              <td>preco</td>
-              <td>número</td>
+              <td>Price</td>
+              <td>number</td>
               <td>Preço atualizado do produto</td>
             </tr>
             <tr>
-              <td>imagens</td>
-              <td>array de strings</td>
-              <td>Lista de imagens atualizada do produto</td>
+              <td>Images</td>
+              <td>Array of strings</td>
+              <td>Updated product image list</td>
             </tr>
             <tr>
-              <td>included</td>
-              <td>array de strings</td>
-              <td>Lista de itens inclusos atualizada do produto</td>
+              <td>Included</td>
+              <td>Array of strings</td>
+              <td>Product list of Included items updated</td>
             </tr>
           </tbody>
         </table>
-        <h3>Resposta</h3>
-        <p>Retorna um objeto JSON com a propriedade <code>update</code> definida como <code>true</code>.</p>
+        <h3>Response</h3>
+        <p>Returns a JSON object with the property <code>update</code> defined as <code>true</code>.</p>
       </div>
       </div>
     </section>
@@ -341,7 +389,9 @@
       </div>
     </footer>
 
+    <!-- SCRIPT -->
     <script>
+
 
       var copyBtn = document.getElementById('copyBtn');
 
@@ -355,10 +405,16 @@
         document.execCommand('copy');
         document.body.removeChild(input);
 
-        alert('Texto copiado para a área de transferência: ' + textToCopy);
+          alert('Texto copiado para a área de transferência: ' + textToCopy);
       });
 
+      const showBtn = document.querySelector('.btnShowExemple')
+      const jsonCode = document.querySelector('.exemploJson')
 
+
+      showBtn.addEventListener('click', ()=>{
+        jsonCode.classList.toggle('showJson')
+      })
     </script>
 
 </body>
