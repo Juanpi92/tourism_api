@@ -63,24 +63,14 @@
             <tr>
               <th>Property</th>
               <th>Type</th>
-              <th>Description </th>
+              <th>Description</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>id</td>
-              <td>integer</td>
-              <td>Product ID</td>
-            </tr>
-            <tr>
               <td>Name</td>
               <td>string</td>
               <td>Product's Name</td>
-            </tr>
-            <tr>
-              <td>Description </td>
-              <td>string</td>
-              <td>Description  do produto</td>
             </tr>
             <tr>
               <td>Price</td>
@@ -88,15 +78,61 @@
               <td>Price of the product</td>
             </tr>
             <tr>
+              <td>Description</td>
+              <td>string</td>
+              <td>Description do product</td>
+            </tr>
+            <tr>
+              <td>located</td>
+              <td>string</td>
+              <td>Where is the product located</td>
+            </tr>
+            <tr>
+              <td>Included</td>
+              <td>Array of strings</td>
+              <td>product capacity</td>
+            </tr>
+            <tr>
+              <td>Capacity</td>
+              <td>Number</td>
+              <td>List of items Included in the product</td>
+            </tr>
+            <tr>
+              <td>Sold</td>
+              <td>Number</td>
+              <td>Quantity of products sold</td>
+            </tr>
+            <tr>
               <td>Images</td>
               <td>Array of strings</td>
               <td>Product photo list</td>
             </tr>
             <tr>
-              <td>Included</td>
-              <td>Array of strings</td>
-              <td>List of items Included in the product</td>
+              <td>Region</td>
+              <td>String</td>
+              <td>Region where the product is located</td>
             </tr>
+            <tr>
+              <td>Latitude</td>
+              <td>String</td>
+              <td>Provides geolocation in latitude</td>
+            </tr>
+            <tr>
+              <td>Longitude</td>
+              <td>String</td>
+              <td>Provides geolocation in longitude</td>
+            </tr>
+            <tr>
+              <td>Rating</td>
+              <td>number</td>
+              <td>Provides product review</td>
+            </tr>
+            <tr>
+              <td>Date</td>
+              <td>string</td>
+              <td>Provides the available date for the product</td>
+            </tr>
+            
           </tbody>
         </table>
         <div class="btnContainer">
@@ -187,19 +223,9 @@
           </thead>
           <tbody>
             <tr>
-              <td>id</td>
-              <td>integer</td>
-              <td>Product ID</td>
-            </tr>
-            <tr>
               <td>Name</td>
               <td>string</td>
               <td>Product's Name</td>
-            </tr>
-            <tr>
-              <td>Description </td>
-              <td>string</td>
-              <td>Product Description</td>
             </tr>
             <tr>
               <td>Price</td>
@@ -207,15 +233,61 @@
               <td>Price of the product</td>
             </tr>
             <tr>
+              <td>Description</td>
+              <td>string</td>
+              <td>Description do product</td>
+            </tr>
+            <tr>
+              <td>located</td>
+              <td>string</td>
+              <td>Where is the product located</td>
+            </tr>
+            <tr>
+              <td>Included</td>
+              <td>Array of strings</td>
+              <td>product capacity</td>
+            </tr>
+            <tr>
+              <td>Capacity</td>
+              <td>Number</td>
+              <td>List of items Included in the product</td>
+            </tr>
+            <tr>
+              <td>Sold</td>
+              <td>Number</td>
+              <td>Quantity of products sold</td>
+            </tr>
+            <tr>
               <td>Images</td>
               <td>Array of strings</td>
               <td>Product photo list</td>
             </tr>
             <tr>
-              <td>Included</td>
-              <td>Array of strings</td>
-              <td>List of items Included in the product</td>
+              <td>Region</td>
+              <td>String</td>
+              <td>Region where the product is located</td>
             </tr>
+            <tr>
+              <td>Latitude</td>
+              <td>String</td>
+              <td>Provides geolocation in latitude</td>
+            </tr>
+            <tr>
+              <td>Longitude</td>
+              <td>String</td>
+              <td>Provides geolocation in longitude</td>
+            </tr>
+            <tr>
+              <td>Rating</td>
+              <td>number</td>
+              <td>Provides product review</td>
+            </tr>
+            <tr>
+              <td>Date</td>
+              <td>string</td>
+              <td>Provides the available date for the product</td>
+            </tr>
+            
           </tbody>
         </table>
         
@@ -294,14 +366,34 @@
               <td>Product's Name</td>
             </tr>
             <tr>
-              <td>Description </td>
-              <td>string</td>
-              <td>Description  do produto</td>
-            </tr>
-            <tr>
               <td>Price</td>
               <td>number</td>
               <td>Price of the product</td>
+            </tr>
+            <tr>
+              <td>Description</td>
+              <td>string</td>
+              <td>Description do product</td>
+            </tr>
+            <tr>
+              <td>located</td>
+              <td>string</td>
+              <td>Where is the product located</td>
+            </tr>
+            <tr>
+              <td>Included</td>
+              <td>Array of strings</td>
+              <td>product capacity</td>
+            </tr>
+            <tr>
+              <td>Capacity</td>
+              <td>Number</td>
+              <td>List of items Included in the product</td>
+            </tr>
+            <tr>
+              <td>Sold</td>
+              <td>Number</td>
+              <td>Quantity of products sold</td>
             </tr>
             <tr>
               <td>Images</td>
@@ -309,10 +401,31 @@
               <td>Product photo list</td>
             </tr>
             <tr>
-              <td>Included</td>
-              <td>Array of strings</td>
-              <td>List of items Included in the product</td>
+              <td>Region</td>
+              <td>String</td>
+              <td>Region where the product is located</td>
             </tr>
+            <tr>
+              <td>Latitude</td>
+              <td>String</td>
+              <td>Provides geolocation in latitude</td>
+            </tr>
+            <tr>
+              <td>Longitude</td>
+              <td>String</td>
+              <td>Provides geolocation in longitude</td>
+            </tr>
+            <tr>
+              <td>Rating</td>
+              <td>number</td>
+              <td>Provides product review</td>
+            </tr>
+            <tr>
+              <td>Date</td>
+              <td>string</td>
+              <td>Provides the available date for the product</td>
+            </tr>
+            
           </tbody>
         </table>
         <div class="btnContainer">
@@ -329,38 +442,31 @@
               <td class="json">
                 <code class="jsonCode">
                   {
-                    "id":1,
-                    "Name":"Angra dos Reis",
-                    "price":120,
-                    "Description":"Conheça o paraíso brasileiro de Angra dos Reis e desfrute de praias paradisíacas.
-                     Você dará um passeio de escuna pelas ilhas da baía e degustará a gastronomia local. 
-                     O passeio inclui café da manhã no ponto de encontro enviado pelo guia, pausa para almoço, e uma pequena trilha pela região.
-                      Angra dos Reis é um município brasileiro no estado de Rio de Janeiro, a sudoeste. 
-                      É composto por 365 ilhas e um pequeno porto rodeado por uma linha costeira íngreme e arborizada. 
-                      A região é conhecida pelas suas inúmeras praias e pela biodiversidade da Ilha Grande, a maior ilha. 
-                      Vila do Abraão é a principal vila da ilha e conta com restaurantes, bares e a Igreja de São Sebastião, no centro de Ilha Grande.",
-                    "located":"Angra dos Reis, Rio de Janeiro",
-                    "Included":[
-                       "café da manhã",
-                       "almoço",
-                       "guia",
-                       "acessibilidade",
-                       "trilha"
+                    "id": 6,
+                    "name": "Ilha Grande",
+                    "price": 140,
+                    "description": "Passeie pela Ilha Grande em uma escuna nesta excursão de 5 horas, com paradas nas atrações mais famosas da ilha. Desfrute de 40 a 50 minutos de tempo livre em cada local. Lagoa Azul, Freguesia de Santana e Japariz e relaxe a bordo do barco entre as paradas. Excursão de 5 horas a três locais próximos a Ilha Grande pela escuna Nade ao lado de peixes tropicais na Lagoa Azul com aluguel de equipamento opcional para mergulho com snorkel Visite a Igreja de Santana no centro histórico da Freguesia de Santana Relaxe na praia e desfrute de um almoço de frutos do mar frescos em Japariz Passe 40 a 50 minutos em cada local Bóias de macarrão e equipamentos de segurança incluídos.",
+                    "located": "Angra dos Reis, Rio de Janeiro",
+                    "included": [
+                      "café da manhã",
+                      "almoço",
+                      "guia",
+                      "acessibilidade"
                     ],
-                    "capacity":20,
-                    "sold":5,
-                    "Images":[
-                       "https://i.imgur.com/d6xEd2J.jpeg",
-                       "https://i.imgur.com/YQ7JwAF.jpg",
-                       "https://i.imgur.com/n27mTkB.jpg",
-                       "https://i.imgur.com/UVfWHmg.jpg"
+                    "capacity": 20,
+                    "sold": 9,
+                    "imagens": [
+                      "https://i.imgur.com/NDIufcA.jpg",
+                      "https://i.imgur.com/NDIufcA.jpg",
+                      "https://i.imgur.com/NDIufcA.jpg",
+                      "https://i.imgur.com/NDIufcA.jpg"
                     ],
-                    "region":"Costa Verde",
-                    "latitude":"-23.00679139156804",
-                    "longitude":"-44.31874801861794",
-                    "rating":4.9,
-                    "date":"21-03-2023"
-                 }
+                    "region": "Costa Verde",
+                    "latitude": "-23.15208114327103",
+                    "longitude": "-44.22895155132558",
+                    "rating": 4.5,
+                    "date": "25-03-2023"
+                  }
               </code>
               </td>
             </tbody>
@@ -407,37 +513,7 @@
               <td class="json">
                 <code class="jsonCode">
                   {
-                    "id":1,
-                    "Name":"Angra dos Reis",
-                    "price":120,
-                    "Description":"Conheça o paraíso brasileiro de Angra dos Reis e desfrute de praias paradisíacas.
-                     Você dará um passeio de escuna pelas ilhas da baía e degustará a gastronomia local. 
-                     O passeio inclui café da manhã no ponto de encontro enviado pelo guia, pausa para almoço, e uma pequena trilha pela região.
-                      Angra dos Reis é um município brasileiro no estado de Rio de Janeiro, a sudoeste. 
-                      É composto por 365 ilhas e um pequeno porto rodeado por uma linha costeira íngreme e arborizada. 
-                      A região é conhecida pelas suas inúmeras praias e pela biodiversidade da Ilha Grande, a maior ilha. 
-                      Vila do Abraão é a principal vila da ilha e conta com restaurantes, bares e a Igreja de São Sebastião, no centro de Ilha Grande.",
-                    "located":"Angra dos Reis, Rio de Janeiro",
-                    "Included":[
-                       "café da manhã",
-                       "almoço",
-                       "guia",
-                       "acessibilidade",
-                       "trilha"
-                    ],
-                    "capacity":20,
-                    "sold":5,
-                    "Images":[
-                       "https://i.imgur.com/d6xEd2J.jpeg",
-                       "https://i.imgur.com/YQ7JwAF.jpg",
-                       "https://i.imgur.com/n27mTkB.jpg",
-                       "https://i.imgur.com/UVfWHmg.jpg"
-                    ],
-                    "region":"Costa Verde",
-                    "latitude":"-23.00679139156804",
-                    "longitude":"-44.31874801861794",
-                    "rating":4.9,
-                    "date":"21-03-2023"
+                    "id":20
                  }
               </code>
               </td>
@@ -457,23 +533,6 @@
         <table class='table'>
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Type</th>
-              <th>Description </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>id</td>
-              <td>integer</td>
-              <td>Product ID a ser atualizado</td>
-            </tr>
-          </tbody>
-        </table>
-        <h3>Requisition Body</h3>
-        <table class='table'>
-          <thead>
-            <tr>
               <th>Property</th>
               <th>Type</th>
               <th>Description </th>
@@ -483,28 +542,69 @@
             <tr>
               <td>Name</td>
               <td>string</td>
-              <td>Name atualizado do produto</td>
-            </tr>
-            <tr>
-              <td>Description </td>
-              <td>string</td>
-              <td>Description  atualizada do produto</td>
+              <td>Product's Name</td>
             </tr>
             <tr>
               <td>Price</td>
               <td>number</td>
-              <td>Preço atualizado do produto</td>
+              <td>Price of the product</td>
             </tr>
             <tr>
-              <td>Images</td>
-              <td>Array of strings</td>
-              <td>Updated product image list</td>
+              <td>Description</td>
+              <td>string</td>
+              <td>Description do product</td>
+            </tr>
+            <tr>
+              <td>located</td>
+              <td>string</td>
+              <td>Where is the product located</td>
             </tr>
             <tr>
               <td>Included</td>
               <td>Array of strings</td>
-              <td>Product list of Included items updated</td>
+              <td>product capacity</td>
             </tr>
+            <tr>
+              <td>Capacity</td>
+              <td>Number</td>
+              <td>List of items Included in the product</td>
+            </tr>
+            <tr>
+              <td>Sold</td>
+              <td>Number</td>
+              <td>Quantity of products sold</td>
+            </tr>
+            <tr>
+              <td>Images</td>
+              <td>Array of strings</td>
+              <td>Product photo list</td>
+            </tr>
+            <tr>
+              <td>Region</td>
+              <td>String</td>
+              <td>Region where the product is located</td>
+            </tr>
+            <tr>
+              <td>Latitude</td>
+              <td>String</td>
+              <td>Provides geolocation in latitude</td>
+            </tr>
+            <tr>
+              <td>Longitude</td>
+              <td>String</td>
+              <td>Provides geolocation in longitude</td>
+            </tr>
+            <tr>
+              <td>Rating</td>
+              <td>number</td>
+              <td>Provides product review</td>
+            </tr>
+            <tr>
+              <td>Date</td>
+              <td>string</td>
+              <td>Provides the available date for the product</td>
+            </tr>
+            
           </tbody>
         </table>
         <h3>Response</h3>
@@ -593,57 +693,7 @@
       </div>
     </footer>
 
-    <!-- SCRIPT -->
-    <script>
-
-
-      var copyBtn = document.getElementById('copyBtn');
-
-      copyBtn.addEventListener('click', function () {
-        var textToCopy = this.getAttribute('data-clipboard-text');
-
-        var input = document.createElement('input');
-        input.setAttribute('value', textToCopy);
-        document.body.appendChild(input);
-        input.select();
-        document.execCommand('copy');
-        document.body.removeChild(input);
-
-          alert('Texto copiado para a área de transferência: ' + textToCopy);
-      });
-
-      const showBtn = document.querySelector('.btnShowExemple')
-      const showBtn2 = document.querySelector('.btnShowExemple2')
-      const showBtn3 = document.querySelector('.btnShowExemple3')
-      const showBtn4 = document.querySelector('.btnShowExemple4')
-      const showBtn5 = document.querySelector('.btnShowExemple5')
-      const jsonCode = document.querySelector('.exemploJson')
-      const jsonCode2 = document.querySelector('.exemploJson2')
-      const jsonCodePost = document.querySelector('.exemploJsonPost')
-      const jsonCodeDelete = document.querySelector('.exemploJsonDelete')
-      const jsonCodePut = document.querySelector('.exemploJsonPut')
-
-      showBtn.addEventListener('click', ()=>{
-        jsonCode.classList.toggle('showJson')
-    
-      })
-      showBtn2.addEventListener('click', ()=>{
-        jsonCode2.classList.toggle('showJson')
-    
-      })
-      showBtn3.addEventListener('click', ()=>{
-        jsonCodePost.classList.toggle('showJson')
-    
-      })
-      showBtn4.addEventListener('click', ()=>{
-        jsonCodeDelete.classList.toggle('showJson')
-    
-      })
-      showBtn5.addEventListener('click', ()=>{
-        jsonCodePut.classList.toggle('showJson')
-    
-      })
-    </script>
-<script src="/js"></script>
 </body>
+<script src="/js"></script>
+
 </html>
