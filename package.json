@@ -1,7 +1,7 @@
 {
   "name": "api_test2",
   "version": "1.0.0",
-  "description": "",
+  "description": "Tourism API\r This repository contains the source code for a tourism API, which provides information about tourist attractions, hotels, and restaurants in various cities around the Rio de Janeiro.",
   "main": "src/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -16,5 +16,6 @@
     "nodemon": "^2.0.21",
     "sqlite": "^4.1.2",
     "sqlite3": "^5.1.4"
-  }
+  },
+  "devDependencies": {}
 }

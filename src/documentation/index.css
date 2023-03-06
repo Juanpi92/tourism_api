@@ -43,6 +43,7 @@ header {
 .logo {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
 }
 
@@ -56,6 +57,8 @@ header {
   color: #fff;
   margin-left: -1rem;
   text-transform: uppercase;
+  white-space: nowrap;
+
 }
 
 @keyframes title {
@@ -75,6 +78,7 @@ header {
   z-index: 5;
   animation: transform 2.3s cubic-bezier(0.175, 0.885, 0.32, 1.25) normal;
   display: block;
+  
 }
 
 @keyframes transform {
@@ -365,5 +369,60 @@ footer .col-md-6 p:last-child {
   footer .col-md-6 {
     width: 100%;
     margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 480px){
+  .header-nav h1{
+    font-size: 18px;
+    white-space: nowrap;
+    margin: 0;
+  }
+  .header-nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0;
+    
+  }
+
+  .logo span{
+    font-size: 18px;
+    white-space: nowrap;
+    margin-left: -2rem;
+
+  }
+
+  .logo img{
+    transform: scale(0.5);
+    white-space: nowrap;
+  }
+
+  .logo{
+  }
+
+  @keyframes transform {
+    0% {
+      transform: translateX(0rem) rotateZ(45deg);
+    }
+  
+    75% {
+      transform: translateX(21rem) rotateZ(45deg);
+    }
+  
+    80% {
+      transform: translateX(21rem) rotateZ(45deg) scale(-1.8);
+      opacity: 0;
+    }
+  
+    85% {
+      transform: translateX(0rem) rotateX(405deg) scale(-1.8);
+      opacity: 0;
+    }
+  
+    100% {
+      transform: translateX(0rem) rotateZ(0deg);
+      opacity: 1;
+    }
   }
 }

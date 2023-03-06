@@ -24,3 +24,23 @@ All contributions are welcome, whether they are bug fixes, feature requests, or 
 
 License
 This project is licensed under the MIT License. See the LICENSE file for details.
+
+
+
+Repositório de CRIATIVOS para API = <a href="https://github.com/Juanpi92/criativos-produtos-api">Visualizar</a>
+
+Repositório da API = <a href="https://github.com/Juanpi92/tourism_api">Visualizar</a>
+
+Documentação da API = <a href="https://tourismapi.herokuapp.com/#update-one-product">Visualizar</a>
+
+MVP (Figma) = <a href="https://www.figma.com/file/yqOtcjypEdqI93c2w0t4SW/Tourism-App?node-id=0%3A1&t=WTkxgYmm0jdTD0tc-1">Visualizar</a>
+
+USER FLOW (Miro) = <a href="https://miro.com/app/board/uXjVPmKHg_o=/?share_link_id=599769016089">Visualizar</a>
+
+
+### Contribuidores (em todas as dependências desse projeto): 
+
+<a href="https://github.com/plfmoura/SquadProject-azulTurismo/graphs/contributors" width="30%">
+  <img src="https://contrib.rocks/image?repo=plfmoura/SquadProject-azulTurismo" />
+  <img src="https://contrib.rocks/image?repo=Juanpi92/tourism_api"/>
+</a>
