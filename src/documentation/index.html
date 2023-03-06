@@ -5,7 +5,9 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/plfmoura/SquadProject-AzulTurismo/master/public/azul.png">
+  <link rel="icon" type="image/svg+xml"
+    href="https://raw.githubusercontent.com/plfmoura/SquadProject-AzulTurismo/master/public/azul.png">
+  <link rel="stylesheet" href="index.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="/css" />
   <title>Azul Tour API</title>
@@ -17,11 +19,12 @@
   <!-- NAVBAR -->
   <header class="header-nav">
     <div class="logo">
-      <img id="logoAnimada" src="https://raw.githubusercontent.com/plfmoura/SquadProject-AzulTurismo/master/public/azul.png" width="60px"
+      <img id="logoAnimada"
+        src="https://raw.githubusercontent.com/plfmoura/SquadProject-AzulTurismo/master/public/azul.png" width="60px"
         height="60px">
-        <span>Azul Tour</span>
+      <span>Azul Tour</span>
     </div>
-    <h1 class="left"><a href="#">API Documentation</a></h1>
+    <h1 class="left">API Documentation</h1>
   </header>
 
   <main>
@@ -132,7 +135,7 @@
               <td>string</td>
               <td>Provides the available date for the product</td>
             </tr>
-            
+
           </tbody>
         </table>
         <div class="btnContainer">
@@ -149,39 +152,67 @@
             <td class="jsonTitle">Json</td>
             <td class="json">
               <code class="jsonCode">
-                {
-                  "id":1,
-                  "name":"Angra dos Reis",
-                  "price":120,
-                  "description":"Conheça o paraíso brasileiro de Angra dos Reis e desfrute de praias paradisíacas.
-                   Você dará um passeio de escuna pelas ilhas da baía e degustará a gastronomia local. 
-                   O passeio inclui café da manhã no ponto de encontro enviado pelo guia, pausa para almoço, e uma pequena trilha pela região.
-                    Angra dos Reis é um município brasileiro no estado de Rio de Janeiro, a sudoeste. 
-                    É composto por 365 ilhas e um pequeno porto rodeado por uma linha costeira íngreme e arborizada. 
-                    A região é conhecida pelas suas inúmeras praias e pela biodiversidade da Ilha Grande, a maior ilha. 
-                    Vila do Abraão é a principal vila da ilha e conta com restaurantes, bares e a Igreja de São Sebastião, no centro de Ilha Grande.",
-                  "located":"Angra dos Reis, Rio de Janeiro",
-                  "included":[
-                     "café da manhã",
-                     "almoço",
-                     "guia",
-                     "acessibilidade",
-                     "trilha"
-                  ],
-                  "capacity":20,
-                  "sold":5,
-                  "images":[
-                     "https://i.imgur.com/d6xEd2J.jpeg",
-                     "https://i.imgur.com/YQ7JwAF.jpg",
-                     "https://i.imgur.com/n27mTkB.jpg",
-                     "https://i.imgur.com/UVfWHmg.jpg"
-                  ],
-                  "region":"Costa Verde",
-                  "latitude":"-23.00679139156804",
-                  "longitude":"-44.31874801861794",
-                  "rating":4.9,
-                  "date":"21-03-2023"
-               }
+               [
+               {
+                "id":1,
+                "name":"Angra dos Reis",
+                "price":120,
+                "description":"Conheça o paraíso brasileiro de Angra dos Reis e desfrute de praias paradisíacas.
+                 Você dará um passeio de escuna pelas ilhas da baía e degustará a gastronomia local. 
+                 O passeio inclui café da manhã no ponto de encontro enviado pelo guia, pausa para almoço, e uma pequena trilha pela região.
+                  Angra dos Reis é um município brasileiro no estado de Rio de Janeiro, a sudoeste. 
+                  É composto por 365 ilhas e um pequeno porto rodeado por uma linha costeira íngreme e arborizada. 
+                  A região é conhecida pelas suas inúmeras praias e pela biodiversidade da Ilha Grande, a maior ilha. 
+                  Vila do Abraão é a principal vila da ilha e conta com restaurantes, bares e a Igreja de São Sebastião, no centro de Ilha Grande.",
+                "located":"Angra dos Reis, Rio de Janeiro",
+                "included":[
+                   "café da manhã",
+                   "almoço",
+                   "guia",
+                   "acessibilidade",
+                   "trilha"
+                ],
+                "capacity":20,
+                "sold":5,
+                "images":[
+                   "https://i.imgur.com/d6xEd2J.jpeg",
+                   "https://i.imgur.com/YQ7JwAF.jpg",
+                   "https://i.imgur.com/n27mTkB.jpg",
+                   "https://i.imgur.com/UVfWHmg.jpg"
+                ],
+                "region":"Costa Verde",
+                "latitude":"-23.00679139156804",
+                "longitude":"-44.31874801861794",
+                "rating":4.9,
+                "date":"21-03-2023"
+             },
+             {
+              "id": 2,
+              "name": "Arraial do Cabo",
+              "price": 120,
+              "description": "Um passeio divertido pelas cristalinas águas de Arraial do Cabo. Visitaremos: Praia do Farol: Localizada em uma reserva ecológica, a Praia do Farol está sob a proteção da Marinha do Brasil. É considerada por alguns como a praia mais linda do Brasil, tendo águas incrivelmente transparentes e areia muito branca. Prainhas do Pontal: Também conhecida como “Prainhas”, é dividida em duas partes, separadas por rochas. Por conta dos costões e das águas transparentes, é perfeita para mergulho, sendo este um dos pontos de parada deste passeio. Gruta Azul: Sua abertura tem 3 metros de largura e dentro dela um lindo salão de 15 metros de altura, com paredes internas em tons dourados e prateados. Apesar do nome, os tons de azul da gruta só podem ser vistos em determinadas épocas do ano, quando no nascer do sol a luz invade o local. Fenda de Nossa Senhora: A origem do nome vem da história de um pescador que em 1721 encontrou ali, na fenda entre estes dois paredões de pedras, uma estátua de Nossa Senhora Aparecida. Pedra do Gorila: A rocha gigante lembra o rosto de um gorila, também conhecido na cidade como o Guardião do Mar. Praia do Forno: Localizada em uma enseada, a Praia do Forno é acessível somente por barco ou trilha íngreme. Além da mata preservada, das águas claras e dos corais, abriga ainda um restaurante flutuante especializado em ostras e mariscos.",
+              "located": "Arraial do Cabo, Rio de Janeiro",
+              "included": [
+                "café da manhã",
+                "almoço",
+                "guia",
+                "acessibilidade"
+              ],
+              "capacity": 20,
+              "sold": 7,
+              "imagens": [
+                "https://i.imgur.com/kubpWyC.jpg",
+                "https://i.imgur.com/gnedgiR.jpg",
+                "https://i.imgur.com/Gs9baJI.jpg",
+                "https://i.imgur.com/rEvrS2c.jpg"
+              ],
+              "region": "Região dos Lagos",
+              "latitude": "-22.96674692146588",
+              "longitude": "-42.02767515662982",
+              "rating": 4.4,
+              "Date": "21-03-2023"
+            }
+               ]
             </code>
             </td>
           </tbody>
@@ -287,23 +318,23 @@
               <td>string</td>
               <td>Provides the available date for the product</td>
             </tr>
-            
+
           </tbody>
         </table>
-        
-      <div class="btnContainer">
-        <button class="btnShowExemple2">Show GET Exemple</button>
-      </div>
-      <div class="exemploJson2">
-        <table id="allGet">
-          <thead>
-            <th>Type</th>
-            <th>Response</th>
-          </thead>
-          <tbody>
-            <td class="jsonTitle">Json</td>
-            <td class="json">
-              <code class="jsonCode">
+
+        <div class="btnContainer">
+          <button class="btnShowExemple2">Show GET Exemple</button>
+        </div>
+        <div class="exemploJson2">
+          <table id="allGet">
+            <thead>
+              <th>Type</th>
+              <th>Response</th>
+            </thead>
+            <tbody>
+              <td class="jsonTitle">Json</td>
+              <td class="json">
+                <code class="jsonCode">
                 {
                   "id":1,
                   "name":"Angra dos Reis",
@@ -338,10 +369,10 @@
                   "date":"21-03-2023"
                }
             </code>
-            </td>
-          </tbody>
-        </table>  
-    </div>
+              </td>
+            </tbody>
+          </table>
+        </div>
     </section>
 
     <!-- INSERIR PRODUTO -->
@@ -350,7 +381,7 @@
         <h2>POST /products</h2>
         <p>Inserts a new product in the database.</p>
         <p>Returns a JSON object with the property <code>insert</code> defined as <code>true</code>.</p>
-        <h3>Insert</h3>
+        <h3>Body</h3>
         <table class='table'>
           <thead>
             <tr>
@@ -425,7 +456,7 @@
               <td>string</td>
               <td>Provides the available date for the product</td>
             </tr>
-            
+
           </tbody>
         </table>
         <div class="btnContainer">
@@ -442,38 +473,15 @@
               <td class="json">
                 <code class="jsonCode">
                   {
-                    "id": 6,
-                    "name": "Ilha Grande",
-                    "price": 140,
-                    "description": "Passeie pela Ilha Grande em uma escuna nesta excursão de 5 horas, com paradas nas atrações mais famosas da ilha. Desfrute de 40 a 50 minutos de tempo livre em cada local. Lagoa Azul, Freguesia de Santana e Japariz e relaxe a bordo do barco entre as paradas. Excursão de 5 horas a três locais próximos a Ilha Grande pela escuna Nade ao lado de peixes tropicais na Lagoa Azul com aluguel de equipamento opcional para mergulho com snorkel Visite a Igreja de Santana no centro histórico da Freguesia de Santana Relaxe na praia e desfrute de um almoço de frutos do mar frescos em Japariz Passe 40 a 50 minutos em cada local Bóias de macarrão e equipamentos de segurança incluídos.",
-                    "located": "Angra dos Reis, Rio de Janeiro",
-                    "included": [
-                      "café da manhã",
-                      "almoço",
-                      "guia",
-                      "acessibilidade"
-                    ],
-                    "capacity": 20,
-                    "sold": 9,
-                    "imagens": [
-                      "https://i.imgur.com/NDIufcA.jpg",
-                      "https://i.imgur.com/NDIufcA.jpg",
-                      "https://i.imgur.com/NDIufcA.jpg",
-                      "https://i.imgur.com/NDIufcA.jpg"
-                    ],
-                    "region": "Costa Verde",
-                    "latitude": "-23.15208114327103",
-                    "longitude": "-44.22895155132558",
-                    "rating": 4.5,
-                    "date": "25-03-2023"
+                    'insert'= true
                   }
               </code>
               </td>
             </tbody>
-            
-          </table>  
-      </div>
-      
+
+          </table>
+        </div>
+
     </section>
 
     <!-- DELETAR UM PRODUTO -->
@@ -518,9 +526,9 @@
               </code>
               </td>
             </tbody>
-          </table>  
-      </div>
-    
+          </table>
+        </div>
+
     </section>
 
 
@@ -604,7 +612,7 @@
               <td>string</td>
               <td>Provides the available date for the product</td>
             </tr>
-            
+
           </tbody>
         </table>
         <h3>Response</h3>
@@ -628,9 +636,9 @@
               </code>
               </td>
             </tbody>
-          </table>  
-        <p>Returns a JSON object with the property <code>update</code> defined as <code>true</code>.</p>
-      </div>
+          </table>
+          <p>Returns a JSON object with the property <code>update</code> defined as <code>true</code>.</p>
+        </div>
       </div>
     </section>
 
@@ -665,5 +673,6 @@
 
 </body>
 <script src="/js"></script>
+<script src="index.js"></script>
 
 </html>
