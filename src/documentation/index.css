@@ -319,13 +319,11 @@ th {
 footer {
   background-color: #1c7ae9;
   color: #ffffff;
-  margin-top: 10rem;
-  padding: 40px 0;
+  margin-top: -10rem;
+  padding: 10px 0;
   font-size: 16px;
   position: absolute;
-  bottom: 0;
   width: 100%;
-  padding: 20px 0;
   left: 0;
 }
 
@@ -398,8 +396,7 @@ footer .col-md-6 p:last-child {
     white-space: nowrap;
   }
 
-  .logo{
-  }
+
 
   @keyframes transform {
     0% {
