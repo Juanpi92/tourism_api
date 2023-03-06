@@ -1,47 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/css"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/css" />
     <title>Document</title>
-   
-</head>
-    
-<body>
+  </head>
+
+  <body>
     <!-- Banner -->
     <banner>
-        <h1 class="titulo">API Documentation</h1>
-        <div>
-        </div>
+      <h1 class="titulo">API Documentation</h1>
+      <div></div>
     </banner>
-    
+
     <!-- Descrição da Api -->
 
     <h2 class="titleApi">O que essa api faz?</h2>
     <p class="discApi">
-        Essa é uma API que fornece informações sobre alguns passeios turísticos no estado do Rio de Janeiro, Brasil.
-        Cada passeio tem um ID, nome, preço, descrição, localização, coordenadas, lista de itens inclusos, capacidade
-        máxima, quantidade de vendas e imagens. Além disso, há uma classificação por região e por avaliação do passeio.
-        Os passeios incluem um passeio de escuna pelas ilhas de Angra dos Reis, um passeio completo em Cabo Frio com
-        passeio de lancha e churrasco à bordo, um passeio de escuna em Ilha Grande, uma visita ao distrito de Itaipava
-        com visita ao Castelo e ao Parque Municipal, uma visita a Paraty e uma trilha até a Pedra do Telégrafo. As
-        informações são fornecidas em formato JSON.
+      Essa é uma API que fornece informações sobre alguns passeios turísticos no
+      estado do Rio de Janeiro, Brasil. Cada passeio tem um ID, nome, preço,
+      descrição, localização, coordenadas, lista de itens inclusos, capacidade
+      máxima, quantidade de vendas e imagens. Além disso, há uma classificação
+      por região e por avaliação do passeio. Os passeios incluem um passeio de
+      escuna pelas ilhas de Angra dos Reis, um passeio completo em Cabo Frio com
+      passeio de lancha e churrasco à bordo, um passeio de escuna em Ilha
+      Grande, uma visita ao distrito de Itaipava com visita ao Castelo e ao
+      Parque Municipal, uma visita a Paraty e uma trilha até a Pedra do
+      Telégrafo. As informações são fornecidas em formato JSON.
     </p>
-    
+
     <!-- Consulta da API -->
 
     <h1 class="titleUrlAPi">URL da API de consulta</h1>
-    
+
     <div class="caixinha">
-        <p class="urlApi">Segue o padrão da URL da API de consulta para buscar o endereço, cidade e estado através do CEP.</p>
-        <ul class="list">
-            <li>Padrão da URL: https://tourismapi.herokuapp.com/products/[id]</li>
-            <li>Exemplo: https://tourismapi.herokuapp.com/products/5</li>
-        </ul>
+      <p class="urlApi">
+        Segue o padrão da URL da API de consulta para buscar o endereço, cidade
+        e estado através do CEP.
+      </p>
+      <ul class="list">
+        <li>Padrão da URL: https://tourismapi.herokuapp.com/products/[id]</li>
+        <li>Exemplo: https://tourismapi.herokuapp.com/products/5</li>
+      </ul>
     </div>
 
     <!-- Resposta da API -->
@@ -49,8 +51,8 @@
     <h1>Exemplos da resposta</h1>
 
     <div class="response">
-        <p class="format">Formato: JSON</p>
-        <pre class="json-response">
+      <p class="format">Formato: JSON</p>
+      <pre class="json-response">
       {
         "id": 1,
         "name": "Angra dos Reis",
@@ -71,36 +73,49 @@
         "rating": 4.9,
         "Date": "21-03-2023"
       }
-        </pre>
-      </div>
-
+        </pre
+      >
+    </div>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6">
-              <p>&copy; <span id="year"></span> Azul Turismo. Todos os direitos reservados.</p>
-              <p>API Documentação<span id="version"></span></p>
-            </div>
-            <div class="col-md-6 text-md-right">
-              <p>Entre em contato conosco: <a href="mailto:suporte@azulturismo.com.br">suporte@azulturismo.com.br</a></p>
-              <p>Siga-nos nas redes sociais:
-                <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-              </p>
-            </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <p>
+              &copy; <span id="year"></span> Azul Turismo. Todos os direitos
+              reservados.
+            </p>
+            <p>API Documentação<span id="version"></span></p>
           </div>
-          <hr>
-          <div class="row">
-            <div class="col-md-12">
-              <p>Este site utiliza cookies para melhorar a sua experiência de navegação. Ao continuar navegando, você concorda com o uso de cookies. Saiba mais em nossa <a href="#">Política de Privacidade</a>.</p>
-            </div>
+          <div class="col-md-6 text-md-right">
+            <p>
+              Entre em contato conosco:
+              <a href="mailto:suporte@azulturismo.com.br"
+                >suporte@azulturismo.com.br</a
+              >
+            </p>
+            <p>
+              Siga-nos nas redes sociais:
+              <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+              <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            </p>
           </div>
         </div>
-      </footer>
-
-</body>
-    <script type="text/css" src="/js"></script>
+        <hr />
+        <div class="row">
+          <div class="col-md-12">
+            <p>
+              Este site utiliza cookies para melhorar a sua experiência de
+              navegação. Ao continuar navegando, você concorda com o uso de
+              cookies. Saiba mais em nossa
+              <a href="#">Política de Privacidade</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="/js"></script>
+  </body>
 </html>
