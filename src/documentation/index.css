@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -7,110 +7,335 @@
 html {
   position: relative;
   min-height: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
-  margin-bottom: 60px; 
+  margin-bottom: 60px;
   width: 100%;
+  font-family: sans-serif;
+  font-size: 20px;
+  overflow-x: hidden;
+  background-color: #FFFFFF;
+  color: #333333;
 }
 
-banner {
+header {
+  color: #FFFFFF;
+  padding: 20px;
+  text-decoration: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 90px;
+  font-size: 1rem;
+  background-color: #215BAA;
+}
+
+
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: large;
+  background-color: #215BAA;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo span {
+  padding: 0 1rem 0 .5rem;
+  animation: title 2s ease-in;
+  position: relative;
+  z-index: 4;
+  font-size: 2.7rem;
+  font-weight: bolder;
+  color: #fff;
+  margin-left: -1rem;
+  text-transform: uppercase;
+}
+
+@keyframes title {
+  from {
+    transform: translateX(-1rem);
+    color: #2ea9ff;
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0rem);
+  }
+}
+
+#logoAnimada {
+  position: relative;
+  z-index: 5;
+  animation: transform 2.3s cubic-bezier(0.175, 0.885, 0.32, 1.25) normal;
   display: block;
+}
+
+@keyframes transform {
+  0% {
+    transform: translateX(0rem) rotateZ(45deg);
+  }
+
+  75% {
+    transform: translateX(21rem) rotateZ(45deg);
+  }
+
+  80% {
+    transform: translateX(21rem) rotateZ(45deg) scale(0.8);
+    opacity: 0;
+  }
+
+  85% {
+    transform: translateX(0rem) rotateX(405deg) scale(0.8);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0rem) rotateZ(0deg);
+    opacity: 1;
+  }
+
+}
+
+
+h1.left a {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+h1 {
+  margin: 0;
+  text-decoration: none;
+  line-height: 0;
+}
+
+main {
+  margin: 20px;
+}
+
+/* TABLE URL */
+.api-table {
+  border-collapse: collapse;
   width: 100%;
-  height: 200px;
-  background-color: #0f547e;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 60px;
+  clear: both;
+}
+
+.api-table th {
+  background-color: #215BAA;
+  padding: 10px;
   text-align: center;
-}
-
-banner img {
-  max-width: 100%;
-  max-height: 100%;
-}
-
-.titleUrlApi {
-  font-size: 2rem;
-  color: #0f547e;
-  margin-top: 1rem;
-}
-.titleApi {
-  font-size: 2rem;
-  color: #0f547e;
-  margin-top: 1rem;
-}
-
-.urlApi {
   font-size: 1.2rem;
-  color: #0f547e;
-  line-height: 1.5;
-  margin: 1rem 0;
+  color: #FFFFFF;
 }
 
-.discApi {
-  font-size: 1.2rem;
-  color: #0f547e;
-  line-height: 1.5;
-  margin: 1rem 0;
+.api-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 1rem;
 }
 
 .caixinha {
-    border: 2px solid #0f547e;
-    padding: 10px;
-    background-color: #f0f8ff;
+  background-color: #1C7AE9;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.caixinha li{
+  color: #FFFFFF;
+}
+
+.urlApi {
+  font-weight: bold;
+  color: #FFFFFF;
 }
 
 .list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  margin: 10px 0;
+  padding: 0;
 }
 
 .list li {
-    margin-bottom: 10px;
-    padding-left: 20px;
-    position: relative;
+  margin-bottom: 5px;
 }
 
-.list li:before {
-    content: "•";
-    color: #0f547e;
-    font-weight: bold;
-    position: absolute;
-    left: 0;
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
-  .response {
-     border: 2px solid #0f547e;
-    padding: 10px;
-    background-color: #f0f8ff;
-    color: #0f547e;
+.copy-button {
+  font-size: 20px;
+  padding: 10px 20px;
+  background-color: #1c86ff;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.copy-button:hover {
+  background-color: #0f4d95;
+}
+
+.btnContainer button{
+  font-size: 20px;
+  padding: 10px 20px;
+  background-color: #555;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btnContainer button:hover{
+  background-color: #222222;
+}
+
+/* TABLES DA API */
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 30px;
   
-    margin-top: 20px;
-  }
-  .format {
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  .json-response {
-    font-size: 14px;
-    font-family: monospace;
-    white-space: pre-wrap;
-    margin: 0;
-  }
+}
 
+th,
+td {
+  border: 1px solid #449bff;
+  padding: 8px;
+  text-align: left;
+  font-size: 14px
+}
+
+th {
+  background-color: #1C7AE9;
+  color: #FFFFFF;
+}
+
+.exemploJson{
+ display: none;
+ transition: all 2s ease;
+ overflow: auto;
+ max-height: 20rem;
+}
+
+.jsonTitle {
+  font-weight: bold;
+  width: 50px;
+  text-align: center;
+}
+
+.jsonCode {
+  font-family: monospace;
+  white-space: pre;
+  overflow: auto;
+  max-height: 150px;
+  overflow-x: auto;
+  max-width: 100%;
+  padding: 10px;
+  font-size: 14px;
+}
+
+
+
+.exemploJson2{
+ display: none;
+ transition: all 2s ease;
+ overflow: auto;
+ max-height: 20rem;
+}
+
+.exemploJsonPost{
+ display: none;
+ transition: all 2s ease;
+ overflow: auto;
+ max-height: 20rem;
+}
+
+.exemploJsonDelete{
+ display: none;
+ transition: all 2s ease;
+ overflow: auto;
+ max-height: 20rem;
+}
+
+.exemploJsonPut{
+ display: none;
+ transition: all 2s ease;
+ overflow: auto;
+ max-height: 20rem;
+}
+
+.showJson {
+  display: block;
+  transition: all 2s ease;
+}
+
+
+.jsonTitle {
+  font-weight: bold;
+}
+
+.json {
+  font-family: monospace;
+  overflow-x: auto;
+  max-width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  /* reduzindo o tamanho da fonte */
+}
+
+
+.endpoint {
+  margin-bottom: 20px;
+}
+
+#endpointFinal {
+  margin-bottom: 15rem;
+}
+
+.endpoint h2 {
+  margin: 0;
+}
+
+.endpoint p {
+  margin-top: 5px;
+}
+
+/* FOOTER */
 
 footer {
-  background-color: #0f547e;
-  color: #fff;
+  background-color: #1C7AE9;
+  color: #FFFFFF;
+  margin-top: 10rem;
   padding: 40px 0;
   font-size: 16px;
   position: absolute;
   bottom: 0;
   width: 100%;
+  padding: 20px 0;
+  left: 0;
 }
 
 footer a {
-  color: #fff;
+  color: #FFFFFF;
+  margin-right: 10px;
 }
 
 footer a:hover {
@@ -118,11 +343,12 @@ footer a:hover {
 }
 
 footer hr {
-  border-top: 1px solid #fff;
+  border-top: 1px solid #FFFFFF;
+  margin: 20px 0;
 }
 
 footer p {
-  margin-bottom: 0;
+  margin-bottom: 10px;
 }
 
 footer .container {

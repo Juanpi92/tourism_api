@@ -1,58 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="/css" />
-    <title>Document</title>
-  </head>
 
-  <body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css"/>
+    <title>Document</title>
+   
+</head>
+    
+<body>
     <!-- Banner -->
     <banner>
-      <h1 class="titulo">API Documentation</h1>
-      <div></div>
+        <h1 class="titulo">API Documentation</h1>
+        <div>
+        </div>
     </banner>
-
+    
     <!-- Descrição da Api -->
 
     <h2 class="titleApi">O que essa api faz?</h2>
     <p class="discApi">
-      Essa é uma API que fornece informações sobre alguns passeios turísticos no
-      estado do Rio de Janeiro, Brasil. Cada passeio tem um ID, nome, preço,
-      descrição, localização, coordenadas, lista de itens inclusos, capacidade
-      máxima, quantidade de vendas e imagens. Além disso, há uma classificação
-      por região e por avaliação do passeio. Os passeios incluem um passeio de
-      escuna pelas ilhas de Angra dos Reis, um passeio completo em Cabo Frio com
-      passeio de lancha e churrasco à bordo, um passeio de escuna em Ilha
-      Grande, uma visita ao distrito de Itaipava com visita ao Castelo e ao
-      Parque Municipal, uma visita a Paraty e uma trilha até a Pedra do
-      Telégrafo. As informações são fornecidas em formato JSON.
+        Essa é uma API que fornece informações sobre alguns passeios turísticos no estado do Rio de Janeiro, Brasil.
+        Cada passeio tem um ID, nome, preço, descrição, localização, coordenadas, lista de itens inclusos, capacidade
+        máxima, quantidade de vendas e imagens. Além disso, há uma classificação por região e por avaliação do passeio.
+        Os passeios incluem um passeio de escuna pelas ilhas de Angra dos Reis, um passeio completo em Cabo Frio com
+        passeio de lancha e churrasco à bordo, um passeio de escuna em Ilha Grande, uma visita ao distrito de Itaipava
+        com visita ao Castelo e ao Parque Municipal, uma visita a Paraty e uma trilha até a Pedra do Telégrafo. As
+        informações são fornecidas em formato JSON.
     </p>
-
+    
     <!-- Consulta da API -->
 
     <h1 class="titleUrlAPi">URL da API de consulta</h1>
-
+    
     <div class="caixinha">
-      <p class="urlApi">
-        Segue o padrão da URL da API de consulta para buscar o endereço, cidade
-        e estado através do CEP.
-      </p>
-      <ul class="list">
-        <li>Padrão da URL: https://tourismapi.herokuapp.com/products/[id]</li>
-        <li>Exemplo: https://tourismapi.herokuapp.com/products/5</li>
-      </ul>
+        <p class="urlApi">Segue o padrão da URL da API de consulta para buscar o endereço, cidade e estado através do CEP.</p>
+        <ul class="list">
+            <li>Padrão da URL: https://tourismapi.herokuapp.com/products/[id]</li>
+            <li>Exemplo: https://tourismapi.herokuapp.com/products/5</li>
+        </ul>
     </div>
+    </section>
 
-    <!-- Resposta da API -->
-
-    <h1>Exemplos da resposta</h1>
+    <!-- INSERIR PRODUTO -->
+    <section id="insert-product">
+      <div class="endpoint">
+        <h2>POST /products</h2>
+        <p>Inserts a new product in the database.</p>
+        <p>Returns a JSON object with the property <code>insert</code> defined as <code>true</code>.</p>
+        <h3>Response</h3>
+        <table class='table'>
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Type</th>
+              <th>Description </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Name</td>
+              <td>string</td>
+              <td>Product's Name</td>
+            </tr>
+            <tr>
+              <td>Description </td>
+              <td>string</td>
+              <td>Description  do produto</td>
+            </tr>
+            <tr>
+              <td>Price</td>
+              <td>number</td>
+              <td>Price of the product</td>
+            </tr>
+            <tr>
+              <td>Images</td>
+              <td>Array of strings</td>
+              <td>Product photo list</td>
+            </tr>
+            <tr>
+              <td>Included</td>
+              <td>Array of strings</td>
+              <td>List of items Included in the product</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="btnContainer">
+          <button class="btnShowExemple3">Show POST Exemple</button>
+        </div>
+        <div class="exemploJsonPost">
+          <table id="allGet">
+            <thead>
+              <th>Type</th>
+              <th>Response</th>
+            </thead>
+            <tbody>
+              <td class="jsonTitle">Json</td>
+              <td class="json">
+                <code class="jsonCode">
+                  {
+                    "id":1,
+                    "Name":"Angra dos Reis",
+                    "price":120,
+                    "Description":"Conheça o paraíso brasileiro de Angra dos Reis e desfrute de praias paradisíacas.
+                     Você dará um passeio de escuna pelas ilhas da baía e degustará a gastronomia local. 
+                     O passeio inclui café da manhã no ponto de encontro enviado pelo guia, pausa para almoço, e uma pequena trilha pela região.
+                      Angra dos Reis é um município brasileiro no estado de Rio de Janeiro, a sudoeste. 
+                      É composto por 365 ilhas e um pequeno porto rodeado por uma linha costeira íngreme e arborizada. 
+                      A região é conhecida pelas suas inúmeras praias e pela biodiversidade da Ilha Grande, a maior ilha. 
+                      Vila do Abraão é a principal vila da ilha e conta com restaurantes, bares e a Igreja de São Sebastião, no centro de Ilha Grande.",
+                    "located":"Angra dos Reis, Rio de Janeiro",
+                    "Included":[
+                       "café da manhã",
+                       "almoço",
+                       "guia",
+                       "acessibilidade",
+                       "trilha"
+                    ],
+                    "capacity":20,
+                    "sold":5,
+                    "Images":[
+                       "https://i.imgur.com/d6xEd2J.jpeg",
+                       "https://i.imgur.com/YQ7JwAF.jpg",
+                       "https://i.imgur.com/n27mTkB.jpg",
+                       "https://i.imgur.com/UVfWHmg.jpg"
+                    ],
+                    "region":"Costa Verde",
+                    "latitude":"-23.00679139156804",
+                    "longitude":"-44.31874801861794",
+                    "rating":4.9,
+                    "date":"21-03-2023"
+                 }
+              </code>
+              </td>
+            </tbody>
+            
+          </table>  
+      </div>
+      
+    </section>
 
     <div class="response">
-      <p class="format">Formato: JSON</p>
-      <pre class="json-response">
+        <p class="format">Formato: JSON</p>
+        <pre class="json-response">
       {
         "id": 1,
         "name": "Angra dos Reis",
@@ -73,49 +166,36 @@
         "rating": 4.9,
         "Date": "21-03-2023"
       }
-        </pre
-      >
-    </div>
+        </pre>
+      </div>
+
 
     <!-- Footer -->
     <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <p>
-              &copy; <span id="year"></span> Azul Turismo. Todos os direitos
-              reservados.
-            </p>
-            <p>API Documentação<span id="version"></span></p>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <p>&copy; <span id="year"></span> Azul Turismo. Todos os direitos reservados.</p>
+              <p>API Documentação<span id="version"></span></p>
+            </div>
+            <div class="col-md-6 text-md-right">
+              <p>Entre em contato conosco: <a href="mailto:suporte@azulturismo.com.br">suporte@azulturismo.com.br</a></p>
+              <p>Siga-nos nas redes sociais:
+                <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+              </p>
+            </div>
           </div>
-          <div class="col-md-6 text-md-right">
-            <p>
-              Entre em contato conosco:
-              <a href="mailto:suporte@azulturismo.com.br"
-                >suporte@azulturismo.com.br</a
-              >
-            </p>
-            <p>
-              Siga-nos nas redes sociais:
-              <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-              <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-              <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            </p>
+          <hr>
+          <div class="row">
+            <div class="col-md-12">
+              <p>Este site utiliza cookies para melhorar a sua experiência de navegação. Ao continuar navegando, você concorda com o uso de cookies. Saiba mais em nossa <a href="#">Política de Privacidade</a>.</p>
+            </div>
           </div>
         </div>
-        <hr />
-        <div class="row">
-          <div class="col-md-12">
-            <p>
-              Este site utiliza cookies para melhorar a sua experiência de
-              navegação. Ao continuar navegando, você concorda com o uso de
-              cookies. Saiba mais em nossa
-              <a href="#">Política de Privacidade</a>.
-            </p>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <script src="/js"></script>
-  </body>
+      </footer>
+
+</body>
+    <script type="text/css" src="/js"></script>
 </html>
