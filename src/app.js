@@ -2,6 +2,7 @@ import express from "express";
 import { documentationRoutes } from "./routes/documentation_routes.js";
 import { productRoutes } from "./routes/product_routes.js";
 import { regionRoutes } from "./routes/region_routes.js";
+import { userRoutes } from "./routes/user_routes.js";
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -25,6 +26,9 @@ documentationRoutes(app);
 
 //routes for region
 regionRoutes(app);
+
+//Routes for the user
+userRoutes(app);
 
 //listen from the server
 app.listen(PORT, () => {
