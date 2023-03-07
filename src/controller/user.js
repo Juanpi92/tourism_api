@@ -6,6 +6,19 @@ export async function validateEmail(email) {
   });
 }
 
+export async function patchUser(id, user) {
+  const user_property = Object.keys(user)[0];
+  let value = user[user_property];
+  if (user_property === "images") {
+    value = value.join(",");
+  }
+  return openDb().then((db) => {
+    return db.run(`UPDATE users SET ${user_property}=? WHERE user_id=${id}`, [
+      value,
+    ]);
+  });
+}
+
 export async function registerUser(user) {
   return openDb().then((db) => {
     db.run(
