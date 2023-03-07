@@ -6,7 +6,7 @@ export const validate = (req, res, next) => {
     res.status(401).send("access denied");
   } else {
     try {
-      const verified = jwt.verify(token, "thisisthesecretkeyofmytoken");
+      const verified = jwt.verify(token, process.env.SECRET_TOKEN);
       req.user = verified;
       next();
     } catch (error) {

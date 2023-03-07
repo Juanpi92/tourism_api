@@ -3,6 +3,8 @@ import { documentationRoutes } from "./routes/documentation_routes.js";
 import { productRoutes } from "./routes/product_routes.js";
 import { regionRoutes } from "./routes/region_routes.js";
 import { userRoutes } from "./routes/user_routes.js";
+import dotenv from "dotenv";
+dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 

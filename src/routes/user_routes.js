@@ -33,7 +33,7 @@ export const userRoutes = (app) => {
         res.status(400).send({ error: "User or password wrong " });
       } else {
         delete isEmail.password;
-        let token = jwt.sign(isEmail, "thisisthesecretkeyofmytoken");
+        let token = jwt.sign(isEmail, process.env.SECRET_TOKEN);
         res.status(200).header("auth-token", token).send(isEmail);
       }
     }
