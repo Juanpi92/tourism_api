@@ -1,5 +1,7 @@
-import { loginUser, registerUser, validateEmail } from "../controller/user.js";
+import { registerUser, validateEmail } from "../controller/user.js";
 import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
+import { validate } from "../authentication/auth.js";
 export const userRoutes = (app) => {
   //Register user
   app.post("/register", async (req, res) => {
@@ -31,8 +33,12 @@ export const userRoutes = (app) => {
         res.status(400).send({ error: "User or password wrong " });
       } else {
         delete isEmail.password;
-        res.status(200).send(isEmail);
+        let token = jwt.sign(isEmail, "thisisthesecretkeyofmytoken");
+        res.status(200).header("auth-token", token).send(isEmail);
       }
     }
+  });
+  app.get("/test", validate, async (req, res) => {
+    res.send("ok");
   });
 };
