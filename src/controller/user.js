@@ -27,3 +27,10 @@ export async function registerUser(user) {
     );
   });
 }
+export async function loginUser(user) {
+  return openDb().then((db) => {
+    return db.get(
+      `SELECT * FROM users WHERE email="${user.email}" AND password="${user.password}"`
+    );
+  });
+}
