@@ -40,3 +40,18 @@ export async function registerUser(user) {
     );
   });
 }
+
+export async function comprar(compra) {
+  return openDb().then((db) => {
+    db.run(
+      "INSERT INTO compras(id_user,id_product,data_compra,data_tour,tickets)VALUES(?,?,?,?,?)",
+      [
+        compra.id_user,
+        compra.id_product,
+        compra.data_compra,
+        compra.data_tour,
+        compra.tickets,
+      ]
+    );
+  });
+}
