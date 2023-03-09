@@ -63,15 +63,27 @@ header {
 }
 
 .titleNav{
-  margin-left: -10rem;
+  margin-left: 1rem;
 }
 
 
 .btnNav {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  gap: 1rem;
   align-items: center;
   padding: 1rem;
+}
+
+.btnNav button{
+  font-size: 20px;
+  padding: 10px 20px;
+  background-color: #1c86ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 
