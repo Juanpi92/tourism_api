@@ -44,6 +44,9 @@ export async function registerUser(user) {
 export async function comprar(compra) {
   return openDb().then((db) => {
     db.run(
+      `UPDATE products SET sold=sold+${compra.tickets} WHERE id=${compra.id_product}`
+    );
+    db.run(
       "INSERT INTO compras(id_user,id_product,data_compra,data_tour,tickets)VALUES(?,?,?,?,?)",
       [
         compra.id_user,
