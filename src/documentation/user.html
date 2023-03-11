@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/usercss">
+  <link rel="icon" type="image/svg+xml"
+    href="https://raw.githubusercontent.com/plfmoura/SquadProject-AzulTurismo/master/public/azul.png">
+  <title>Azul Tour API</title>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="header-nav">
+    <div class="logo">
+      <img id="logoAnimada"
+        src="https://raw.githubusercontent.com/plfmoura/SquadProject-AzulTurismo/master/public/azul.png" width="60px"
+        height="60px">
+      <span>Azul Tour</span>
+    </div>
+    <div class="titleNav">
+      <h1>API DOCUMENTATION</h1>
+    </div>
+    <div class="btnNav">
+      <Button onclick="window.location.href='/'">Home</Button>
+      <Button onclick="window.location.href='/user'">Usuario</Button>
+    </div>
+  </header>
+
+
+  <h1>POST/ register</h1>
+  <p>Items needed for user registration</p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>name</td>
+        <td>string</td>
+        <td>username</td>
+      </tr>
+      <tr>
+        <td>email</td>
+        <td>string</td>
+        <td>user email</td>
+      </tr>
+      <tr>
+        <td>password</td>
+        <td>string</td>
+        <td>user password</td>
+      </tr>
+      <tr>
+        <td>idioms</td>
+        <td>string</td>
+        <td>languages ​​the user knows</td>
+      </tr>
+      <tr>
+        <td>profession</td>
+        <td>string</td>
+        <td>user's profession</td>
+      </tr>
+      <tr>
+        <td>located</td>
+        <td>string</td>
+        <td>user location</td>
+      </tr>
+      <tr>
+        <td>tel1</td>
+        <td>string</td>
+        <td>first user phone</td>
+      </tr>
+      <tr>
+        <td>tel2</td>
+        <td>string</td>
+        <td>second user phone</td>
+      </tr>
+      <tr>
+        <td>about</td>
+        <td>string</td>
+        <td>about the user</td>
+      </tr>
+      <tr>
+        <td>images</td>
+        <td>array of string</td>
+        <td>profile pictures</td>
+      </tr>
+      <tr>
+        <td>image_banner</td>
+        <td>string</td>
+        <td>profile background photo</td>
+      </tr>
+      <tr>
+        <td>image_profile</td>
+        <td>string</td>
+        <td>user photo</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Registry response examples</p>
+  <button id="btn1">show examples</button>
+    <table id="register" class="examplesOff">
+      <thead>
+        <tr>
+          <th>Property</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Json</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>error</td>
+          <td>string</td>
+          <td>Error message indicating that the user already exists</td>
+          <td>
+            <code>
+            <pre>
+  {
+    "error": "User already exist"
+  }
+            </pre>
+            </code>
+        </tr>
+        <tr>
+          <td>register</td>
+          <td>boolean</td>
+          <td>Indicates whether the registration was successful</td>
+          <td>
+            <code>
+        <pre>
+  {
+    "register": true
+  }
+              </pre>
+
+            </code>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>    
+
+  <h1>GET/ login</h1>
+  <p>Items needed for user login</p>
+  <div class="example1">
+    
+
+
+  <table>
+    <thead>
+      <tr>
+        <th>Parameters</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>email</td>
+        <td>string</td>
+        <td>Email of user trying to authenticate</td>
+      </tr>
+      <tr>
+        <td>password</td>
+        <td>string</td>
+        <td>Password of the user trying to authenticate</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Login response examples</p>
+  <button id="btn2">show examples</button>
+  <table class="examplesOff2">
+    <thead>
+      <tr>
+        <th>HTTP Status Code</th>
+        <th>Response Body</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>200</td>
+        <td>
+          <code>
+          <pre>
+  {
+    "user_id":4,
+    "name":"Pedro Moura",
+    "email":"pflmoura@gmail.com",
+    "idioms":"Portugues, Inglês",
+    "profession":"Estudante",
+    "locate": "Rio de janeiro, Brasil",
+    "tel1":"+5521987461245"
+    "tel2":"+5521972340243"
+    "about": "Meu nome é Pedro"
+    "images": [
+    "http://www.daniellenoce.com.br/wp-content/uploads/2017/07/9-vistas-incriveis-no-rio-de-janeiro-danielle-noce-9.jpg",
+    "https://www.daninoce.com.br/wp-content/uploads/2017/07/9-vistas-incriveis-no-rio-de-janeiro-danielle-noce-02.jpg"
+    ],
+    "image_banner": "https://www.daninoce.com.br/wp-content/uploads/2017/07/9-vistas-incriveis-no-rio-de-janeiro-danielle-noce-02.jpg",
+    "image_profile": "https://www.shutterstock.com/shutterstock/photos/492607711/display_1500/stock-photo-funny-nerd-or-geek-have-an-idea-and-holds-finger-up-492607711.jpg"
+  }
+
+          </pre>
+        </code>
+        </td>
+        <td>Login successful. The response body is an object containing the user's information, excluding their
+          password. The auth-token header is also included in the response, containing a JWT token that can be used to
+          authenticate future requests.</td>
+      </tr>
+      <tr>
+        <td>400</td>
+        <td><code>
+          <pre>
+  {
+     error: "User or password wrong" 
+  }
+          </pre>
+        </code></td>
+        <td>Invalid email or password provided. The response body is an object containing an error property with the
+          value "User or password wrong".</td>
+      </tr>
+      <tr>
+        <td>401</td>
+        <td><code>
+          <pre>
+  {
+    error: "Authentication token is missing or invalid" 
+  }
+          </pre>
+        </code></td>
+        <td>The request did not include a valid JWT token in the auth-token header, or the token provided was invalid.
+          The response body is an object containing an error property with the value "Authentication token is missing or
+          invalid".</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h1>PATCH/ data update</h1>
+  <p>Items needed to update some data</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Type</th>
+        <th>Descrition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>id</td>
+        <td>string</td>
+        <td>User ID</td>
+      </tr>
+      <tr>
+        <td>data</td>
+        <td>string</td>
+        <td>information to be changed</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Data update response examples</p>
+  <button id="btn3">show examples</button>
+  <table class="examplesOff3">
+    <thead>
+      <tr>
+        <th>Request</th>
+        <th>Response</th>
+        <th>Descrition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>
+          <pre>
+  auth-token: ""
+  {
+    "idioms": "Espanhol, Português, Inglês"
+  }
+          </pre>
+        </code></td>
+        <td>acess denid</td>
+        <td>attempt to update one of the properties of a user without sending the token received upon login</td>
+      </tr>
+      <tr>
+        <td><code>
+          <pre>
+  auth-token: "jiadsfj289738981nkdfaduiahsd12389dnasd"
+  {
+    "idioms": "Espanhol, Português, Inglês"
+  }
+          </pre>
+        </code></td>
+        <td>invalid token</td>
+        <td>attempt to update one of a user's properties with the wrong token</td>
+      </tr>
+      <tr>
+        <td><code>
+          <pre>
+  auth-token: "SJ2938DI928404MDJHAODPC"
+  {
+    "idioms": "Espanhol, Português, Inglês"
+  }
+          </pre>
+        </code></td>
+        <td><code>
+          <pre>
+  {
+    "update": "true"
+  }          
+          </pre>
+        </code></td>
+        <td>attempt to update one of a user's properties with the correct token</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h1>POST/ purchase</h1>
+  <p>necessary item purchase</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Parameters</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>id_user</td>
+        <td>number</td>
+        <td>User ID</td>
+      </tr>
+      <tr>
+        <td>id_product</td>
+        <td>number</td>
+        <td>product id</td>
+      </tr>
+      <tr>
+        <td>data_compra</td>
+        <td>string</td>
+        <td>date of purchase</td>
+      </tr>
+      <tr>
+        <td>data_tour</td>
+        <td>string</td>
+        <td>date of tourism</td>
+      </tr>
+      <tr>
+        <td>tickets</td>
+        <td>number</td>
+        <td>number of tickets</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Purchase response examples</p>
+  <button id="btn4">show examples</button>
+  <table class="examplesOff4">
+    <thead>
+      <tr>
+        <th>Request</th>
+        <th>Response</th>
+        <th>Descrition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>
+        <pre>
+auth-token: ""
+{
+  "id_user": 4,
+  "id_product":12,
+  "data_compra":"07-03-2023"
+  "data_tour": "20-03-2023"
+  "tickets": 5
+}
+        </pre>
+      </code></td>
+        <td>acess denid</td>
+        <td>try to make a purchase without sending the token received at login</td>
+      </tr>
+      <tr>
+        <td><code>
+        <pre>
+auth-token: "jiadsfj289738981nkdfaduiahsd12389dnasd"
+{
+  "id_user": 4,
+  "id_product":12,
+  "data_compra":"07-03-2023"
+  "data_tour": "20-03-2023"
+  "tickets": 5
+}
+        </pre>
+      </code></td>
+        <td>invalid token</td>
+        <td>attempt to make a purchase with the wrong token</td>
+      </tr>
+      <tr>
+        <td><code>
+        <pre>
+auth-token: "SJ2938DI928404MDJHAODPC"
+{
+  "id_user": 4,
+  "id_product":12,
+  "data_compra":"07-03-2023"
+  "data_tour": "20-03-2023"
+  "tickets": 5
+}
+        </pre>
+      </code></td>
+        <td><code>
+        <pre>
+{
+  "compra": "true"
+}          
+        </pre>
+      </code></td>
+        <td>attempt to buy with correct token</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6">
+          <p class="mb-0">&copy; <span id="year"></span> Azul Turismo. Todos os direitos reservados.</p>
+          <p class="mb-0">Documentação da API de Gerenciamento de Produtos<span id="version"></span></p>
+        </div>
+        <div class="col-md-6 text-md-right">
+          <p class="mb-0">Entre em contato conosco: <a
+              href="mailto:suporte@azulturismo.com.br">suporte@azulturismo.com.br</a></p>
+          <p class="mb-0">Siga-nos nas redes sociais:
+            <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          </p>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-12">
+          <p class="mb-0">Este site utiliza cookies para melhorar a sua experiência de navegação. Ao continuar
+            navegando, você concorda com o uso de cookies. Saiba mais em nossa <a href="#">Política de Privacidade</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+</body>
+<script src="userjs"></script>
+
+</html>

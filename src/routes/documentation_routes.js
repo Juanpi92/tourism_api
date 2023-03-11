@@ -9,4 +9,13 @@ export const documentationRoutes = (app) => {
   app.get("/js", async (req, res) => {
     res.sendFile(path.join(path.resolve(), "src/documentation/index.js"));
   });
+  app.get("/user", async (req, res) => {
+    res.sendFile(path.join(path.resolve(), "src/documentation/user.html"));
+  });
+  app.get("/usercss", async (req, res) => {
+    res.sendFile(path.join(path.resolve(), "src/documentation/user.css"));
+  });
+  app.get("/userjs", async (req, res) => {
+    res.sendFile(path.join(path.resolve(), "src/documentation/user.js"));
+  });
 };
