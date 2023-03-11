@@ -28,8 +28,9 @@ export const userRoutes = (app) => {
     }
   });
 
-  app.get("/login", async (req, res) => {
+  app.post("/login", async (req, res) => {
     let isEmail = await validateEmail(req.body.email);
+    console.log(req.body);
     if (!isEmail) {
       res.status(400).send({ error: "User or password wrong " });
     } else {
@@ -39,7 +40,7 @@ export const userRoutes = (app) => {
       } else {
         delete isEmail.password;
         let token = jwt.sign(isEmail, process.env.SECRET_TOKEN);
-        res.status(200).header("auth-token", token).send(isEmail);
+        res.status(200).send({ user: isEmail, token: token });
       }
     }
   });
