@@ -30,7 +30,6 @@ export const userRoutes = (app) => {
 
   app.post("/login", async (req, res) => {
     let isEmail = await validateEmail(req.body.email);
-    console.log(req.body);
     if (!isEmail) {
       res.status(400).send({ error: "User or password wrong " });
     } else {
@@ -39,6 +38,7 @@ export const userRoutes = (app) => {
         res.status(400).send({ error: "User or password wrong " });
       } else {
         delete isEmail.password;
+        isEmail = { ...isEmail, images: isEmail.images.split(",") };
         let token = jwt.sign(isEmail, process.env.SECRET_TOKEN);
         res.status(200).send({ user: isEmail, token: token });
       }
