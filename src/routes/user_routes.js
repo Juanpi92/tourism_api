@@ -1,5 +1,6 @@
 import {
   comprar,
+  getHistory,
   patchUser,
   registerUser,
   validateEmail,
@@ -54,6 +55,11 @@ export const userRoutes = (app) => {
   app.post("/comprar", validate, async (req, res) => {
     await comprar(req.body);
     res.status(200).send({ compra: true });
+  });
+  app.get("/history/:id", validate, async (req, res) => {
+    const id = Number(req.params.id);
+    let history = await getHistory(id);
+    res.status(200).send(history);
   });
 
   app.get("/test", validate, async (req, res) => {
