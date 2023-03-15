@@ -7,8 +7,9 @@ export async function validateEmail(email) {
 }
 export async function getHistory(id) {
   return openDb().then((db) => {
-    return db.all(`SELECT id_compras,name,located,imagens,data_compra,data_tour FROM
-compras INNER JOIN products ON compras.id_product=products.id WHERE id_user=${id}`);
+    return db.all(
+      `SELECT id_compras,name,located,imagens,data_compra,data_tour,payment FROM compras INNER JOIN products ON compras.id_product=products.id WHERE id_user=${id}`
+    );
   });
 }
 
