@@ -1,4 +1,8 @@
-import { getAllUser, validateAdminEmail } from "../controller/admin.js";
+import {
+  getAllUser,
+  getCompras,
+  validateAdminEmail,
+} from "../controller/admin.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { validate } from "../authentication/auth.js";
@@ -20,6 +24,11 @@ export const adminRoutes = (app) => {
   });
   app.get("/users", validate, async (req, res) => {
     let users = await getAllUser();
-    res.status(200).send(history);
+    res.status(200).send(users);
+  });
+
+  app.get("/compras", validate, async (req, res) => {
+    let compras = await getCompras();
+    res.status(200).send(compras);
   });
 };
