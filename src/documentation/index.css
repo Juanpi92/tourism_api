@@ -40,7 +40,6 @@ header {
   background-color: #215baa;
 }
 
-
 .logo {
   display: flex;
   align-items: center;
@@ -59,13 +58,11 @@ header {
   margin-left: -1rem;
   text-transform: uppercase;
   white-space: nowrap;
-
 }
 
-.titleNav{
+.titleNav {
   margin-left: 1rem;
 }
-
 
 .btnNav {
   display: flex;
@@ -75,7 +72,7 @@ header {
   padding: 1rem;
 }
 
-.btnNav button{
+.btnNav button {
   font-size: 20px;
   padding: 10px 20px;
   background-color: #1c86ff;
@@ -85,7 +82,6 @@ header {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-
 
 @keyframes title {
   from {
@@ -104,7 +100,6 @@ header {
   z-index: 5;
   animation: transform 2.3s cubic-bezier(0.175, 0.885, 0.32, 1.25) normal;
   display: block;
-
 }
 
 @keyframes transform {
@@ -131,7 +126,6 @@ header {
     opacity: 1;
   }
 }
-
 
 h1 {
   margin: 0;
@@ -357,7 +351,6 @@ footer a {
 
 footer a:hover {
   color: #00bfff;
-
 }
 
 footer hr {
@@ -374,7 +367,6 @@ footer p {
 footer .container {
   max-width: 100%vw;
   margin: 1rem;
-
 }
 
 footer .row {
@@ -382,24 +374,20 @@ footer .row {
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 1rem;
-
 }
 
 footer .col-md-6 {
   width: 50%;
-
 }
 
 footer .col-md-6 p:last-child {
   margin-bottom: 0;
-
 }
 
 @media (max-width: 767px) {
   footer .col-md-6 {
     width: 100%;
     margin-bottom: 20px;
-    
   }
 }
 
@@ -415,22 +403,18 @@ footer .col-md-6 p:last-child {
     align-items: center;
     justify-content: space-evenly;
     margin: 0;
-
   }
 
   .logo span {
     font-size: 18px;
     white-space: nowrap;
     margin-left: -2rem;
-
   }
 
   .logo img {
     transform: scale(0.5);
     white-space: nowrap;
   }
-
-
 
   @keyframes transform {
     0% {
