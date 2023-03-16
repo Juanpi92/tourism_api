@@ -195,6 +195,11 @@ button {
     overflow-x: auto;
     display: none
 }
+.examplesOff5 {
+    overflow: auto;
+    overflow-x: auto;
+    display: none
+}
 
 
 .examplesOn {
@@ -202,6 +207,34 @@ button {
     overflow: auto;
     overflow-x: auto;
 }
+
+.card {
+  background-color: #fff;
+  border: 1px solid #1c7ae9;
+  padding: 12px;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+.card table{
+  background-color: red;
+  width: 37.5rem;
+  border-radius: 15px;
+  margin-top: -1rem;
+  margin-left: -0.8rem;
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 22px;
+}
+
+.card p {
+  font-size: 16px;
+  line-height: 1.4;
+  margin-bottom: 0;
+}
+
 
 
 
