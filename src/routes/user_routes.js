@@ -1,5 +1,6 @@
 import {
   comprar,
+  getHistory,
   patchUser,
   registerUser,
   validateEmail,
@@ -28,7 +29,7 @@ export const userRoutes = (app) => {
     }
   });
 
-  app.get("/login", async (req, res) => {
+  app.post("/login", async (req, res) => {
     let isEmail = await validateEmail(req.body.email);
     if (!isEmail) {
       res.status(400).send({ error: "User or password wrong " });
@@ -38,8 +39,9 @@ export const userRoutes = (app) => {
         res.status(400).send({ error: "User or password wrong " });
       } else {
         delete isEmail.password;
+        isEmail = { ...isEmail, images: isEmail.images.split(",") };
         let token = jwt.sign(isEmail, process.env.SECRET_TOKEN);
-        res.status(200).header("auth-token", token).send(isEmail);
+        res.status(200).send({ user: isEmail, token: token });
       }
     }
   });
@@ -53,6 +55,11 @@ export const userRoutes = (app) => {
   app.post("/comprar", validate, async (req, res) => {
     await comprar(req.body);
     res.status(200).send({ compra: true });
+  });
+  app.get("/history/:id", validate, async (req, res) => {
+    const id = Number(req.params.id);
+    let history = await getHistory(id);
+    res.status(200).send(history);
   });
 
   app.get("/test", validate, async (req, res) => {

@@ -4,6 +4,7 @@ import { productRoutes } from "./routes/product_routes.js";
 import { regionRoutes } from "./routes/region_routes.js";
 import { userRoutes } from "./routes/user_routes.js";
 import dotenv from "dotenv";
+import { adminRoutes } from "./routes/admin_route.js";
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -31,6 +32,8 @@ regionRoutes(app);
 
 //Routes for the user
 userRoutes(app);
+
+adminRoutes(app);
 
 //listen from the server
 app.listen(PORT, () => {

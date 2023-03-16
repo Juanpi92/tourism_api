@@ -5,6 +5,13 @@ export async function validateEmail(email) {
     return db.get(`SELECT * FROM users WHERE email="${email}"`);
   });
 }
+export async function getHistory(id) {
+  return openDb().then((db) => {
+    return db.all(
+      `SELECT id_compras,name,located,imagens,data_compra,data_tour,payment,products.id as id_tour FROM compras INNER JOIN products ON compras.id_product=products.id WHERE id_user=${id}`
+    );
+  });
+}
 
 export async function patchUser(id, user) {
   const user_property = Object.keys(user)[0];
@@ -47,13 +54,14 @@ export async function comprar(compra) {
       `UPDATE products SET sold=sold+${compra.tickets} WHERE id=${compra.id_product}`
     );
     db.run(
-      "INSERT INTO compras(id_user,id_product,data_compra,data_tour,tickets)VALUES(?,?,?,?,?)",
+      "INSERT INTO compras(id_user,id_product,data_compra,data_tour,tickets,payment)VALUES(?,?,?,?,?,?)",
       [
         compra.id_user,
         compra.id_product,
         compra.data_compra,
         compra.data_tour,
         compra.tickets,
+        compra.payment,
       ]
     );
   });

@@ -119,7 +119,7 @@
         <tr>
           <td>error</td>
           <td>string</td>
-          <td>Error message indicating that the user already exists</td>
+          <td>Error message indicating that the email is already registered</td>
           <td>
             <code>
             <pre>
@@ -245,7 +245,7 @@
     </tbody>
   </table>
 
-  <h1>PATCH/ data update</h1>
+  <h1>PATCH/ data update/:id</h1>
   <p>Items needed to update some data</p>
   <table>
     <thead>
@@ -324,7 +324,7 @@
     </tbody>
   </table>
 
-  <h1>POST/ purchase</h1>
+  <h1>POST/ comprar/:id</h1>
   <p>necessary item purchase</p>
   <table>
     <thead>
@@ -359,6 +359,11 @@
         <td>tickets</td>
         <td>number</td>
         <td>number of tickets</td>
+      </tr>
+      <tr>
+        <td>payment</td>
+        <td>number</td>
+        <td>product payment</td>
       </tr>
     </tbody>
   </table>
@@ -430,6 +435,46 @@ auth-token: "SJ2938DI928404MDJHAODPC"
     </tbody>
   </table>
 
+
+  <h1>GET/ history/:id</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>parameters</th>
+        <th>type</th>
+        <th>description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>teste</td>
+        <td>teste</td>
+        <td>test</td>
+      </tr>
+      <tr>
+        <td>teste</td>
+        <td>teste</td>
+        <td>test</td>
+      </tr>
+      <tr>
+        <td>teste</td>
+        <td>teste</td>
+        <td>test</td>
+      </tr>
+      <tr>
+        <td>teste</td>
+        <td>teste</td>
+        <td>test</td>
+      </tr>
+      <tr>
+        <td>teste</td>
+        <td>teste</td>
+        <td>test</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button>show examples</button>
 
   <!-- Footer -->
   <footer>
