@@ -1,4 +1,4 @@
-import { validateAdminEmail } from "../controller/admin.js";
+import { getAllUser, validateAdminEmail } from "../controller/admin.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { validate } from "../authentication/auth.js";
@@ -17,5 +17,9 @@ export const adminRoutes = (app) => {
         res.status(200).send({ user: isEmail, token: token });
       }
     }
+  });
+  app.get("/users", validate, async (req, res) => {
+    let users = await getAllUser();
+    res.status(200).send(history);
   });
 };
