@@ -1,3 +1,4 @@
+import { validate } from "../authentication/auth.js";
 import {
   deleteOneProduct,
   insertProduct,
@@ -34,7 +35,7 @@ export const productRoutes = (app) => {
   });
 
   //Insert Product
-  app.post("/products", async (req, res) => {
+  app.post("/products", validate, async (req, res) => {
     let product = req.body;
     product = {
       ...product,
@@ -46,14 +47,14 @@ export const productRoutes = (app) => {
   });
 
   //Del One product
-  app.delete("/products/:id", async (req, res) => {
+  app.delete("/products/:id", validate, async (req, res) => {
     const { id } = req.params;
     await deleteOneProduct(id);
     res.status(200).send({ delete: true });
   });
 
   //Update One product
-  app.put("/products/:id", async (req, res) => {
+  app.put("/products/:id", validate, async (req, res) => {
     const { id } = req.params;
     let product = req.body;
     await updateOneProduct(id, product);
