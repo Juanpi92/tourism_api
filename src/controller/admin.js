@@ -8,7 +8,7 @@ export async function validateAdminEmail(email) {
 
 export async function getAllUser() {
   return openDb().then((db) => {
-    return db.get(`SELECT * FROM users`);
+    return db.all(`SELECT * FROM users`);
   });
 }
 
