@@ -2,6 +2,7 @@ import { validate } from "../authentication/auth.js";
 import {
   deleteOneProduct,
   insertProduct,
+  selectAllFaq,
   selectAllProduct,
   selectOneProduct,
   updateOneProduct,
@@ -59,5 +60,11 @@ export const productRoutes = (app) => {
     let product = req.body;
     await updateOneProduct(id, product);
     res.status(200).send({ update: true });
+  });
+
+  //Get All Product/*
+  app.get("/faq", async (req, res) => {
+    let faq = await selectAllFaq();
+    res.status(200).send(faq);
   });
 };

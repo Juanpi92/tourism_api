@@ -5,6 +5,12 @@ export async function selectAllProduct() {
     return db.all("SELECT * FROM products ORDER BY rating DESC");
   });
 }
+export async function selectAllFaq() {
+  return openDb().then((db) => {
+    return db.all("SELECT * FROM faq");
+  });
+}
+selectAllFaq;
 export async function selectOneProduct(id) {
   return openDb().then((db) => {
     return db.get(`SELECT * FROM products WHERE id=${id}`);
