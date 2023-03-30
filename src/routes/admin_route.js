@@ -1,6 +1,7 @@
 import {
   getAllUser,
   getCompras,
+  patchProduct,
   validateAdminEmail,
 } from "../controller/admin.js";
 import bcrypt from "bcrypt";
@@ -30,5 +31,15 @@ export const adminRoutes = (app) => {
   app.get("/compras", validate, async (req, res) => {
     let compras = await getCompras();
     res.status(200).send(compras);
+  });
+
+  app.patch("/product/:id", validate, async (req, res) => {
+    try {
+      const id = Number(req.params.id);
+      await patchProduct(id, req.body);
+      res.status(200).send({ updated: true });
+    } catch (error) {
+      res.status(400).send({ error: error.message });
+    }
   });
 };

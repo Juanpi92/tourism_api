@@ -62,7 +62,7 @@ export const productRoutes = (app) => {
     res.status(200).send({ update: true });
   });
 
-  //Get All Product/*
+  //Get All Faq/*
   app.get("/faq", async (req, res) => {
     let faq = await selectAllFaq();
     res.status(200).send(faq);

@@ -20,3 +20,23 @@ INNER JOIN products ON compras.id_product=products.id INNER JOIN users ON compra
     );
   });
 }
+
+//Update the data and price of product
+export async function patchProduct(id, product) {
+  const product_property = Object.keys(product)[0];
+  let value = product[product_property];
+  if (product_property === "price") {
+    return openDb().then((db) => {
+      return db.run(`UPDATE products SET price=? WHERE id=${id}`, [value]);
+    });
+  }
+  if (product_property === "Date") {
+    return openDb().then((db) => {
+      return db.run(`UPDATE products SET Date=?,sold=? WHERE id=${id}`, [
+        value,
+        0,
+      ]);
+    });
+  }
+  throw new Error("cant access database");
+}
