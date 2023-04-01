@@ -1,7 +1,9 @@
 import {
   comprar,
+  getDuvidas,
   getHistory,
   patchUser,
+  postDuvida,
   registerUser,
   validateEmail,
 } from "../controller/user.js";
@@ -60,6 +62,24 @@ export const userRoutes = (app) => {
     const id = Number(req.params.id);
     let history = await getHistory(id);
     res.status(200).send(history);
+  });
+
+  app.post("/duvida", validate, async (req, res) => {
+    try {
+      await postDuvida(req.body);
+      res.status(200).send({ updated: true });
+    } catch (error) {
+      res.status(400).send({ error: "Cant acces to the database" });
+    }
+  });
+  app.get("/duvida/:id", validate, async (req, res) => {
+    try {
+      const id = Number(req.params.id);
+      let duvidas = await getDuvidas(id);
+      res.status(200).send(duvidas);
+    } catch (error) {
+      res.status(400).send({ error: "Cant acces to the database" });
+    }
   });
 
   app.get("/test", validate, async (req, res) => {

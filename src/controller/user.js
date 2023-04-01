@@ -66,3 +66,24 @@ export async function comprar(compra) {
     );
   });
 }
+
+export async function postDuvida(duvida) {
+  return openDb().then((db) => {
+    db.run(
+      "INSERT INTO duvidas(data_question,question,data_response,response,id_user)VALUES(?,?,?,?,?)",
+      [
+        duvida.data_question,
+        duvida.question,
+        duvida.data_response,
+        duvida.response,
+        duvida.id_user,
+      ]
+    );
+  });
+}
+
+export async function getDuvidas(id) {
+  return openDb().then((db) => {
+    return db.all(`SELECT * FROM duvidas WHERE id_user=${id}`);
+  });
+}
