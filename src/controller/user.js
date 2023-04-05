@@ -70,13 +70,14 @@ export async function comprar(compra) {
 export async function postDuvida(duvida) {
   return openDb().then((db) => {
     db.run(
-      "INSERT INTO duvidas(data_question,question,data_response,response,id_user)VALUES(?,?,?,?,?)",
+      "INSERT INTO duvidas(data_question,question,data_response,response,id_user,title)VALUES(?,?,?,?,?,?)",
       [
         duvida.data_question,
         duvida.question,
         duvida.data_response,
         duvida.response,
         duvida.id_user,
+        duvida.title,
       ]
     );
   });
