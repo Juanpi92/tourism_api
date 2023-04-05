@@ -25,7 +25,7 @@ export async function deleteOneProduct(id) {
 export async function updateOneProduct(id, product) {
   openDb().then((db) => {
     db.run(
-      `UPDATE products SET name=?,price=?,description=?,located=?,included=?,capacity=?,sold=?,imagens=?,region=?,latitude=?,longitude=?,rating=?,date=? WHERE id=?`,
+      `UPDATE products SET name=?,price=?,description=?,located=?,included=?,capacity=?,sold=?,imagens=?,region=?,latitude=?,longitude=?,rating=?,date=?,video=? WHERE id=?`,
       [
         product.name,
         product.price,
@@ -40,6 +40,7 @@ export async function updateOneProduct(id, product) {
         product.longitude,
         product.rating,
         product.date,
+        product.video,
         id,
       ]
     );
@@ -49,7 +50,7 @@ export async function updateOneProduct(id, product) {
 export async function insertProduct(product) {
   openDb().then((db) => {
     db.run(
-      "INSERT INTO products(name,price,description,located,included,capacity,sold,imagens,region,longitude,latitude,rating,date)VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)",
+      "INSERT INTO products(name,price,description,located,included,capacity,sold,imagens,region,longitude,latitude,rating,date,video)VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
       [
         product.name,
         product.price,
@@ -64,6 +65,7 @@ export async function insertProduct(product) {
         product.longitude,
         product.rating,
         product.date,
+        product.video,
       ]
     );
   });
