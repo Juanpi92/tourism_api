@@ -1,7 +1,6 @@
 import {
   getAllUser,
   getCompras,
-  patchProduct,
   validateAdminEmail,
 } from "../controller/admin.js";
 import bcrypt from "bcrypt";
