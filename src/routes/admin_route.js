@@ -33,13 +33,4 @@ export const adminRoutes = (app) => {
     res.status(200).send(compras);
   });
 
-  app.patch("/product/:id", validate, async (req, res) => {
-    try {
-      const id = Number(req.params.id);
-      await patchProduct(id, req.body);
-      res.status(200).send({ updated: true });
-    } catch (error) {
-      res.status(400).send({ error: error.message });
-    }
-  });
 };

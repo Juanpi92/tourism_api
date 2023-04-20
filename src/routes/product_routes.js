@@ -69,6 +69,8 @@ export const productRoutes = (app) => {
     res.status(200).send(faq);
   });
 
+
+  
   //Atualizar a data e a quantidade de um produto 
   app.patch("/product/:id", validate, async (req, res) => {
     try {
