@@ -2,6 +2,7 @@ import { validate } from "../authentication/auth.js";
 import {
   deleteOneProduct,
   insertProduct,
+  patchProduct,
   selectAllFaq,
   selectAllProduct,
   selectOneProduct,
@@ -66,5 +67,16 @@ export const productRoutes = (app) => {
   app.get("/faq", async (req, res) => {
     let faq = await selectAllFaq();
     res.status(200).send(faq);
+  });
+
+  //Atualizar a data e a quantidade de um produto 
+  app.patch("/product/:id", validate, async (req, res) => {
+    try {
+      const id = Number(req.params.id);
+      await patchProduct(id, req.body);
+      res.status(200).send({ updated: true });
+    } catch (error) {
+      res.status(400).send({ error: error.message });
+    }
   });
 };

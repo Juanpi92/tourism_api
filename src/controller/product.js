@@ -10,7 +10,7 @@ export async function selectAllFaq() {
     return db.all("SELECT * FROM faq");
   });
 }
-selectAllFaq;
+
 export async function selectOneProduct(id) {
   return openDb().then((db) => {
     return db.get(`SELECT * FROM products WHERE id=${id}`);
@@ -69,4 +69,24 @@ export async function insertProduct(product) {
       ]
     );
   });
+}
+
+//Update the data and price of product
+export async function patchProduct(id, product) {
+  const product_property = Object.keys(product)[0];
+  let value = product[product_property];
+  if (product_property === "price") {
+    return openDb().then((db) => {
+      return db.run(`UPDATE products SET price=? WHERE id=${id}`, [value]);
+    });
+  }
+  if (product_property === "Date") {
+    return openDb().then((db) => {
+      return db.run(`UPDATE products SET Date=?,sold=? WHERE id=${id}`, [
+        value,
+        0,
+      ]);
+    });
+  }
+  throw new Error("cant access database");
 }
