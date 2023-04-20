@@ -70,7 +70,7 @@ export const productRoutes = (app) => {
   });
 
 
-  
+
   //Atualizar a data e a quantidade de um produto 
   app.patch("/product/:id", validate, async (req, res) => {
     try {
