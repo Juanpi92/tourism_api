@@ -32,20 +32,25 @@ export const userRoutes = (app) => {
   });
 
   app.post("/login", async (req, res) => {
-    let isEmail = await validateEmail(req.body.email);
-    if (!isEmail) {
-      res.status(400).send({ error: "User or password wrong " });
-    } else {
-      let valid = await bcrypt.compare(req.body.password, isEmail.password);
-      if (!valid) {
+    try {
+      let isEmail = await validateEmail(req.body.email);
+      if (!isEmail) {
         res.status(400).send({ error: "User or password wrong " });
       } else {
-        delete isEmail.password;
-        isEmail = { ...isEmail, images: isEmail.images.split(",") };
-        let token = jwt.sign(isEmail, process.env.SECRET_TOKEN);
-        res.status(200).send({ user: isEmail, token: token });
+        let valid = await bcrypt.compare(req.body.password, isEmail.password);
+        if (!valid) {
+          res.status(400).send({ error: "User or password wrong " });
+        } else {
+          delete isEmail.password;
+          isEmail = { ...isEmail, images: isEmail.images.split(",") };
+          let token = jwt.sign(isEmail, process.env.SECRET_TOKEN);
+          res.status(200).send({ user: isEmail, token: token });
+        }
       }
+    } catch (error) {
+      res.status(400).send({ error: "An error ocurred" });
     }
+   
   });
 
   app.patch("/user/:id", validate, async (req, res) => {
