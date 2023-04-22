@@ -7,7 +7,7 @@ import {
 } from "../controller/admin.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import { validate } from "../authentication/auth.js";
+import { validate, validateAdmin } from "../authentication/auth.js";
 export const adminRoutes = (app) => {
   app.post("/admin/login", async (req, res) => {
     let isEmail = await validateAdminEmail(req.body.email);
@@ -34,13 +34,13 @@ export const adminRoutes = (app) => {
     res.status(200).send(compras);
   });
 
-  app.get("/duvidas", validate, async (req, res) => {
+  app.get("/duvidas", validateAdmin, async (req, res) => {
     let duvidas = await getAllDuvidas();
     res.status(200).send(duvidas);
   });
 
   //responder uma duvida
-  app.patch("/duvida/:id", validate, async (req, res) => {
+  app.patch("/duvida/:id", validateAdmin, async (req, res) => {
     try {
       console.log("ruta")
       const id = Number(req.params.id);

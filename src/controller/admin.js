@@ -30,9 +30,10 @@ export async function getAllDuvidas() {
 
   export async function patchDuvidas(id,response) {
     let value=response.response;
+    let data_response = new Date().toLocaleDateString("pt-br").replace(/\//g, "-");
     return openDb().then((db) => {
-      return db.run(`UPDATE duvidas SET response=? WHERE id_duvida=${id}`, [
-        value,
+      return db.run(`UPDATE duvidas SET response=?,data_response=? WHERE id_duvida=${id}`, [
+        value,data_response
       ]);
     })
     };
