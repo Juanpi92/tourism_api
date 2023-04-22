@@ -54,8 +54,6 @@ export const adminRoutes = (app) => {
     } catch (error) {
         res.status(400).send({ error: "Cant access to the database" });
     }
-    await getAllDuvidas();
-    res.status(200).send(duvidas);
   });
 
   //responder uma duvida
