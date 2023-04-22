@@ -1,6 +1,8 @@
 import {
+  getAllDuvidas,
   getAllUser,
   getCompras,
+  patchDuvidas,
   validateAdminEmail,
 } from "../controller/admin.js";
 import bcrypt from "bcrypt";
@@ -30,6 +32,23 @@ export const adminRoutes = (app) => {
   app.get("/compras", validate, async (req, res) => {
     let compras = await getCompras();
     res.status(200).send(compras);
+  });
+
+  app.get("/duvidas", validate, async (req, res) => {
+    let duvidas = await getAllDuvidas();
+    res.status(200).send(duvidas);
+  });
+
+  //responder uma duvida
+  app.patch("/duvida/:id", validate, async (req, res) => {
+    try {
+      console.log("ruta")
+      const id = Number(req.params.id);
+     await patchDuvidas(id, req.body);
+     res.status(200).send("duvida respondida satisfatoriamente");
+    } catch (error) {
+      res.status(400).send({ error: "Cant acces to the database" });
+    }  
   });
 
 };

@@ -21,4 +21,18 @@ INNER JOIN products ON compras.id_product=products.id INNER JOIN users ON compra
   });
 }
 
+export async function getAllDuvidas() {
+  return openDb().then((db) => {
+    return db.all(
+      `SELECT * FROM duvidas`);
+     });
+  };
 
+  export async function patchDuvidas(id,response) {
+    let value=response.response;
+    return openDb().then((db) => {
+      return db.run(`UPDATE duvidas SET response=? WHERE id_duvida=${id}`, [
+        value,
+      ]);
+    })
+    };
