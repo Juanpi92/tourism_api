@@ -11,6 +11,12 @@ export async function getAllUser() {
     return db.all(`SELECT * FROM users`);
   });
 }
+//Apagar uma duvida
+export async function deleteDuvida(id) {
+  openDb().then((db) => {
+    db.run(`DELETE FROM duvidas WHERE id=${id}`);
+  });
+}
 
 export async function getCompras() {
   return openDb().then((db) => {

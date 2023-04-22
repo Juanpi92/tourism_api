@@ -1,4 +1,5 @@
 import {
+  deleteDuvida,
   getAllDuvidas,
   getAllUser,
   getCompras,
@@ -45,6 +46,18 @@ export const adminRoutes = (app) => {
     res.status(200).send(duvidas);
   });
 
+  app.delete("/duvida/:id", validateAdmin, async (req, res) => {
+    try {
+      const id = Number(req.params.id);
+      await deleteDuvida(id);
+      res.status(200).send({"deleted":true});
+    } catch (error) {
+        res.status(400).send({ error: "Cant access to the database" });
+    }
+    await getAllDuvidas();
+    res.status(200).send(duvidas);
+  });
+
   //responder uma duvida
   app.patch("/duvida/:id", validateAdmin, async (req, res) => {
     try {
@@ -52,7 +65,7 @@ export const adminRoutes = (app) => {
      await patchDuvidas(id, req.body);
      res.status(200).send("duvida respondida satisfatoriamente");
     } catch (error) {
-      res.status(400).send({ error: "Cant acces to the database" });
+      res.status(400).send({ error: "Cant access to the database" });
     }  
   });
 
