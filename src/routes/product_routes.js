@@ -49,14 +49,14 @@ export const productRoutes = (app) => {
   });
 
   //Del One product
-  app.delete("/products/:id", validate, async (req, res) => {
+  app.delete("/product/:id", validate, async (req, res) => {
     const { id } = req.params;
     await deleteOneProduct(id);
     res.status(200).send({ delete: true });
   });
 
   //Update One product
-  app.put("/products/:id", validate, async (req, res) => {
+  app.put("/product/:id", validate, async (req, res) => {
     const { id } = req.params;
     let product = req.body;
     await updateOneProduct(id, product);
