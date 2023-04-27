@@ -33,8 +33,18 @@ export const adminRoutes = (app) => {
   });
 
   app.get("/users", validateAdmin, async (req, res) => {
-    let users = await getAllUser();
+    const token = req.header("admin-token");
+   let token_decoded= jwt.decode(token,process.env.SECRET_TOKEN);
+      if(token_decoded.role!="admin"&&token_decoded.role!="convidado"&&token_decoded.role!="fotografia"){
+    return res.status(403).send({error:"Forbidden resourse"});
+   }
+//Se não e convidado, admin, ou fotografo dar o res
+try {
+  let users = await getAllUser();
     res.status(200).send(users);
+} catch (error) {
+  res.status(400).send({error:"Cant access database"});
+} 
   });
 
   app.get("/compras", validateAdmin, async (req, res) => {
