@@ -8,7 +8,7 @@ import {
 } from "../controller/admin.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import { validate, validateAdmin } from "../authentication/auth.js";
+import {validateAdmin } from "../authentication/auth.js";
 export const adminRoutes = (app) => {
 
   app.post("/admin/login", async (req, res) => {
@@ -31,12 +31,13 @@ export const adminRoutes = (app) => {
     }
  
   });
-  app.get("/users", validate, async (req, res) => {
+
+  app.get("/users", validateAdmin, async (req, res) => {
     let users = await getAllUser();
     res.status(200).send(users);
   });
 
-  app.get("/compras", validate, async (req, res) => {
+  app.get("/compras", validateAdmin, async (req, res) => {
     let compras = await getCompras();
     res.status(200).send(compras);
   });
