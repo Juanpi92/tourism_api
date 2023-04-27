@@ -13,22 +13,27 @@ import { validate } from "../authentication/auth.js";
 export const userRoutes = (app) => {
   //Register user
   app.post("/register", async (req, res) => {
-    let user = req.body;
-    //Here we encripted the password
-    let hashed_password = await bcrypt.hash(req.body.password, 10);
-    user = {
-      ...user,
-      images: user.images.join(","),
-      password: hashed_password,
-    };
-
-    let isEmail = await validateEmail(user.email);
-    if (isEmail) {
-      res.status(400).send({ error: "User already exist " });
-    } else {
-      await registerUser(user);
-      res.status(200).send({ register: true });
+    try {
+      let user = req.body;
+      //Here we encripted the password
+      let hashed_password = await bcrypt.hash(req.body.password, 10);
+      user = {
+        ...user,
+        images: user.images.join(","),
+        password: hashed_password,
+      };
+  
+      let isEmail = await validateEmail(user.email);
+      if (isEmail) {
+        res.status(400).send({ error: "User already exist " });
+      } else {
+        await registerUser(user);
+        res.status(200).send({ register: true });
+      }
+    } catch (error) {
+      res.status(400).send({ error: "Cant access to the database" });
     }
+ 
   });
 
   app.post("/login", async (req, res) => {
