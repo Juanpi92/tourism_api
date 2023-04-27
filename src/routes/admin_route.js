@@ -49,7 +49,10 @@ export const adminRoutes = (app) => {
   app.delete("/duvida/:id", validateAdmin, async (req, res) => {
     try {
       const id = Number(req.params.id);
-      await deleteDuvida(id);
+      let deleted=await deleteDuvida(id)
+     if(!deleted.changes){
+throw new Error("")
+     };
       res.status(200).send({"deleted":true});
     } catch (error) {
         res.status(400).send({ error: "Cant access to the database" });

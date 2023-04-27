@@ -13,8 +13,8 @@ export async function getAllUser() {
 }
 //Apagar uma duvida
 export async function deleteDuvida(id) {
-  openDb().then((db) => {
-    db.run(`DELETE FROM duvidas WHERE id_duvida=${id}`);
+  return openDb().then((db) => {
+    return db.run(`DELETE FROM duvidas WHERE id_duvida=${id}`);
   });
 }
 
