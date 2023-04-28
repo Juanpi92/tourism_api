@@ -61,7 +61,7 @@ try {
     const token = req.header("admin-token");
     let token_decoded= jwt.decode(token,process.env.SECRET_TOKEN);
        if(token_decoded.role!="admin"){
-     return res.status(403).send({error:"Forbidden resourse"});
+     return res.status(403).send({error:"Pedro no puedes deletar, eres fotografo no admin"});
     }
 
     try {
