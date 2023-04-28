@@ -1,4 +1,4 @@
-import { validate } from "../authentication/auth.js";
+import { validate, validateAdmin } from "../authentication/auth.js";
 import {
   deleteOneProduct,
   insertProduct,
@@ -37,7 +37,7 @@ export const productRoutes = (app) => {
   });
 
   //Insert Product
-  app.post("/products", validate, async (req, res) => {
+  app.post("/products", validateAdmin, async (req, res) => {
     let product = req.body;
     product = {
       ...product,
@@ -49,14 +49,14 @@ export const productRoutes = (app) => {
   });
 
   //Del One product
-  app.delete("/product/:id", validate, async (req, res) => {
+  app.delete("/product/:id", validateAdmin, async (req, res) => {
     const { id } = req.params;
     await deleteOneProduct(id);
     res.status(200).send({ delete: true });
   });
 
   //Update One product
-  app.put("/product/:id", validate, async (req, res) => {
+  app.put("/product/:id", validateAdmin, async (req, res) => {
     const { id } = req.params;
     let product = req.body;
     await updateOneProduct(id, product);
@@ -72,7 +72,7 @@ export const productRoutes = (app) => {
 
 
   //Atualizar a data e a quantidade de um produto 
-  app.patch("/product/:id", validate, async (req, res) => {
+  app.patch("/product/:id", validateAdmin, async (req, res) => {
     try {
       const id = Number(req.params.id);
       await patchProduct(id, req.body);
