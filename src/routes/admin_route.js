@@ -58,6 +58,12 @@ try {
   });
 
   app.delete("/duvida/:id", validateAdmin, async (req, res) => {
+    const token = req.header("admin-token");
+    let token_decoded= jwt.decode(token,process.env.SECRET_TOKEN);
+       if(token_decoded.role!="admin"){
+     return res.status(403).send({error:"Forbidden resourse"});
+    }
+
     try {
       const id = Number(req.params.id);
       let deleted=await deleteDuvida(id)
