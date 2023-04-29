@@ -48,13 +48,22 @@ try {
   });
 
   app.get("/compras", validateAdmin, async (req, res) => {
-    let compras = await getCompras();
+    try {
+      let compras = await getCompras();
     res.status(200).send(compras);
+    } catch (error) {
+      res.status(400).send({error:"Cant access database"});
+    }
   });
 
   app.get("/duvidas", validateAdmin, async (req, res) => {
-    let duvidas = await getAllDuvidas();
-    res.status(200).send(duvidas);
+    try {
+      let duvidas = await getAllDuvidas();
+      res.status(200).send(duvidas);
+    } catch (error) {
+      res.status(400).send({error:"Cant access database"});
+    }
+
   });
 
   app.delete("/duvida/:id", validateAdmin, async (req, res) => {
@@ -63,7 +72,6 @@ try {
        if(token_decoded.role!="admin"){
      return res.status(403).send({error:"Vocẽ não tem privilegios para usar este recurso"});
     }
-
     try {
       const id = Number(req.params.id);
       let deleted=await deleteDuvida(id)
@@ -78,6 +86,11 @@ throw new Error("")
 
   //responder uma duvida
   app.patch("/duvida/:id", validateAdmin, async (req, res) => {
+    const token = req.header("admin-token");
+    let token_decoded= jwt.decode(token,process.env.SECRET_TOKEN);
+       if(token_decoded.role!="admin"){
+     return res.status(403).send({error:"Vocẽ não tem privilegios para usar este recurso"});
+    }
     try {
       const id = Number(req.params.id);
      await patchDuvidas(id, req.body);

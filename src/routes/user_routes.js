@@ -59,19 +59,33 @@ export const userRoutes = (app) => {
   });
 
   app.patch("/user/:id", validate, async (req, res) => {
-    const id = Number(req.params.id);
-    await patchUser(id, req.body);
-    res.status(200).send({ updated: true });
+    try {
+      const id = Number(req.params.id);
+      await patchUser(id, req.body);
+      res.status(200).send({ updated: true });
+    } catch (error) {
+      res.status(400).send({ error: "Cant access to the database" }); 
+    }
+   
   });
 
   app.post("/comprar", validate, async (req, res) => {
-    await comprar(req.body);
+    try {
+      await comprar(req.body);
     res.status(200).send({ compra: true });
+    } catch (error) {
+      res.status(400).send({ error: "Cant access to the database" }); 
+    }
   });
+
   app.get("/history/:id", validate, async (req, res) => {
-    const id = Number(req.params.id);
-    let history = await getHistory(id);
-    res.status(200).send(history);
+    try {
+      const id = Number(req.params.id);
+      let history = await getHistory(id);
+      res.status(200).send(history);
+    } catch (error) {
+      res.status(400).send({ error: "Cant access to the database" });
+    }
   });
 
   app.post("/duvida", validate, async (req, res) => {
